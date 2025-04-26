@@ -62,7 +62,7 @@
   --current-text-secondary: var(--text-secondary);
   --current-border-color: #444;
   --current-shadow: var(--shadow-sm);
-  
+
   /* Shadows */
   --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.2);
   /* Small shadow */
@@ -99,7 +99,12 @@
   --breakpoint-lg: 1200px;
 }
 
+
+
+
+
 /* ========== RESET ========== */
+
 
 
 
@@ -279,7 +284,7 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   gap: var(--spacing-lg);
 }
 
@@ -385,22 +390,6 @@ h6 {
   margin-top: 10px;
 }
 
-/* .profile-text .social {
-  display: flex;
-  gap: 30px;
-  font-size: 20px;
-  margin-top: 10px;
-  padding-bottom: 50px;
-}
-
-.profile-text .social a {
-  color: var(--text-primary);
-  transition: 0.3s ease;
-}
-
-.profile-text .social a:hover {
-  color: var(--carnation-pink);
-} */
 
 /*--------------------------- Buttons ---------------------------*/
 
@@ -431,10 +420,12 @@ h6 {
 
 /* 🔥 Primary Button (Filled) */
 .btn.cta {
-  background-color: var(--smitten);      /* #C73987 */
+  background-color: var(--smitten);
+  /* #C73987 */
   color: white;
   border: none;
-  box-shadow: 0 0 6px rgba(199, 57, 135, 0.4); /* Subtle glow */
+  box-shadow: 0 0 6px rgba(199, 57, 135, 0.4);
+  /* Subtle glow */
 }
 
 .btn.cta:hover {
@@ -463,12 +454,14 @@ h6 {
 /*---------------------------About---------------------------*/
 .about-area {
   padding-top: 110px;
-  padding-bottom: 80px; 
-  min-height: 100vh;   
-  display: flex;  
+  padding-bottom: 80px;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
 
-  background-color: var(--rich-black);}
+  background: linear-gradient(to bottom right, var(--rich-black), var(--eerie-black));
+
+}
 
 .about {
   width: 100%;
@@ -579,7 +572,7 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%; 
+  height: 100%;
   padding-top: 25px;
 }
 
@@ -593,7 +586,7 @@ h6 {
 
 .skills-card h4,
 .skills-column h4 {
-  
+
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -603,7 +596,7 @@ h6 {
   font-size: 22px;
   color: var(--smitten);
   line-height: 1.2;
-  white-space: nowrap;      
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 700;
@@ -626,7 +619,8 @@ h6 {
   content: "";
   display: block;
   width: 80%;
-  margin: 10px auto 20px auto; /* ✅ center it horizontally */
+  margin: 10px auto 20px auto;
+  /* ✅ center it horizontally */
 
   height: 2px;
   background: linear-gradient(to right, var(--smitten), var(--carnation-pink));
@@ -684,9 +678,15 @@ h6 {
 .tech-skills.active .fill {
   animation: growBar 2s ease forwards;
 }
+
 @keyframes growBar {
-  from { width: 0; }
-  to { width: var(--target-width); }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--target-width);
+  }
 }
 
 /* Lists */
@@ -708,7 +708,7 @@ h6 {
   align-items: center;
   border-bottom: 1px dashed #555;
   padding-bottom: 6px;
-  gap:  10px;
+  gap: 10px;
 }
 
 /* Subheading (Optional) */
@@ -724,7 +724,8 @@ h6 {
 /*--------------------------- Education Section (2025 Modern UI) ---------------------------*/
 .education {
   padding: 100px 0;
-  background-color: var(--rich-black); /* #040404 */
+  background: linear-gradient(to bottom right, var(--rich-black), var(--eerie-black));
+
 }
 
 .education .heading {
@@ -736,7 +737,7 @@ h6 {
 }
 
 .education .heading span {
-  color: var(--smitten); 
+  color: var(--smitten);
 }
 
 .education-timeline {
@@ -767,8 +768,17 @@ h6 {
 }
 
 @keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.2); opacity: 1; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
 .education-entry .card {
@@ -789,7 +799,8 @@ h6 {
 .education-entry .date {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--carnation-pink); /* #FDA5C8 */
+  color: var(--carnation-pink);
+  /* #FDA5C8 */
   margin-bottom: 12px;
   display: flex;
   align-items: center;
@@ -843,7 +854,6 @@ h6 {
 /* Experience Section */
 /*--------------------------- Experience Section ---------------------------*/
 .experience {
-  background: linear-gradient(to right, #040404, #191919);
   padding: 80px 20px;
   text-align: center;
 }
@@ -931,8 +941,8 @@ h6 {
   list-style: disc;
   padding-left: 18px;
   color: var(--text-primary);
-  margin: 0 0 20px; 
-  flex-grow: 1; 
+  margin: 0 0 20px;
+  flex-grow: 1;
 }
 
 .experience-card ul li {
@@ -945,7 +955,7 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 0;
 }
@@ -986,7 +996,8 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: auto; /* ⬅️ Force to bottom of card */
+  margin-top: auto;
+  /* ⬅️ Force to bottom of card */
 
 }
 
@@ -994,6 +1005,8 @@ h6 {
 
 .project-content {
   padding: 90px 0;
+  background: linear-gradient(to bottom right, var(--rich-black), var(--eerie-black));
+
 }
 
 .project-title {
@@ -1038,12 +1051,12 @@ h6 {
 }
 
 .projects {
-  
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  align-items: stretch; 
-  position: relative;   
+  align-items: stretch;
+  position: relative;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1057,7 +1070,8 @@ h6 {
   transition: all 0.3s ease;
   opacity: 0;
   transform: scale(0.96);
-  min-height: 360px; /* 🔑 force consistent height */
+  min-height: 360px;
+  /* 🔑 force consistent height */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1133,7 +1147,7 @@ h6 {
   padding: 90px 0;
   text-align: center;
   padding-top: 80px;
-  
+
 }
 
 .section-title h4 {
@@ -1216,10 +1230,12 @@ h6 {
 }
 
 .cert-card .btn:hover {
-  background-color: var(--mexican-pink); /* Bright pink on hover */
+  background-color: var(--mexican-pink);
+  /* Bright pink on hover */
   color: white;
   border: 1px solid var(--mexican-pink);
-  box-shadow: 0 0 12px rgba(231, 0, 125, 0.5); /* subtle glow effect */
+  box-shadow: 0 0 12px rgba(231, 0, 125, 0.5);
+  /* subtle glow effect */
 }
 
 .btn.disabled {
@@ -1230,94 +1246,171 @@ h6 {
 }
 
 
-/* === Career Goals Glass Card with Custom Dark Theme === */
-.career-card-modern {
-  background: rgba(25, 25, 25, 0.95);
-  color: var(--carnation-pink);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
-  max-width: 900px;
-  margin: 0 auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(231, 0, 125, 0.3);
-  backdrop-filter: blur(10px);
+/* Career Goals Section (2025 Final Clean Style) */
+#career-goals {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom right, var(--rich-black), var(--eerie-black));
+  text-align: center;
 }
 
-.career-card-modern .goal-text,
-.career-card-modern p {
-  color: var(--text-primary);
-}
-
-.career-card-modern .callout-box-modern {
-  background-color: rgba(253, 165, 200, 0.08);
-  padding: 15px 20px;
-  border-left: 4px solid var(--mexican-pink);
-  font-style: italic;
-  font-size: 15px;
-  border-radius: var(--radius-sm);
-  color: var(--china-pink);
-}
-
+/* Properly target the heading */
 .career-heading {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--smitten);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.2;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+
 }
 
 .career-heading i {
   font-size: 1.8rem;
   color: var(--carnation-pink);
+  position: relative;
+  top: 2px;
+}
+
+/* Heading Text Block */
+.heading-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ✅ fix: center the title and subtitle */
+}
+
+/* Career Goals Main Title */
+.career-heading h2 {
+  background: linear-gradient(90deg, var(--smitten), var(--carnation-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Career Goals Subheading */
+.career-subtitle {
+  font-size: 1rem;
+  color: var(--china-pink);
+  margin-top: 8px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.career-card-modern {
+  background: rgba(25, 25, 25, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  padding: 50px;
+  box-shadow: 0 0 12px rgba(199, 57, 135, 0.3);
+  border: 1px solid var(--smitten);
+  transition: all 0.3s ease;
+}
+
+.career-card-modern:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(231, 0, 125, 0.3);
 }
 
 .goal-text {
-  font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 25px;
-  color: var(--text-primary);
-  text-align: justify;
-}
-
-#career-goals {
-  padding: 100px 0;
-  background-color: var(--bg-primary);
-  text-align: center;
-  padding-top: 10px;
-}
-
-#career-goals h2 {
-  font-size: 2.5rem;
-  color: var(--carnation-pink);
-  text-transform: uppercase;
-  margin-bottom: var(--spacing-md);
-}
-
-#career-goals .goal-text {
   font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: var(--text-primary);
+  color: var(--text-secondary);
+  /* Instead of bright white */
   line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 30px;
 }
 
-#career-goals .callout-box-modern {
-  background-color: rgba(253, 165, 200, 0.1);
-  border-left: 4px solid var(--mexican-pink);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--china-pink);
-  margin-top: 30px;
+.highlight {
+  color: var(--mexican-pink);
+  /* Use your theme color (pinkish bold) */
+  font-weight: 600;
 }
+
+
+.callout-box-modern {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(253, 165, 200, 0.1);
+  border-left: 4px solid var(--carnation-pink);
+  color: var(--china-pink);
+
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.callout-box-modern i {
+  font-size: 1.5rem;
+  color: var(--mexican-pink);
+}
+
+.animated-icon {
+  animation: pulse 2s infinite alternate;
+  font-size: 24px;
+  color: var(--carnation-pink);
+}
+
+.animated-icon:hover {
+  animation: none;
+  color: var(--carnation-pink);
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animated-icon {
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* === Volunteering Section === */
 #volunteering {
   padding: 80px 0;
-  background-color: var(--bg-primary);
   text-align: center;
+  background: #000;
 }
 
 #volunteering h4 {
@@ -1369,7 +1462,8 @@ h6 {
 .contact-content {
   padding: 100px 30px;
   background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background: linear-gradient(to bottom right, var(--rich-black), var(--eerie-black));
+
   text-align: center;
   position: relative;
 }
@@ -1504,7 +1598,8 @@ input[type="checkbox"] {
   border-radius: 4px;
   background-color: transparent;
   position: relative;
-  top: 0.1em; /* ✅ This is the key */
+  top: 0.1em;
+  /* ✅ This is the key */
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -1533,7 +1628,8 @@ input[type="checkbox"]:checked::after {
   gap: 10px;
   line-height: 1.5;
   cursor: pointer;
-  padding-top: 2px; /* optional fine-tune */
+  padding-top: 2px;
+  /* optional fine-tune */
 }
 
 
@@ -1575,6 +1671,52 @@ input[type="checkbox"]:checked::after {
   margin-top: var(--spacing-sm);
 }
 
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  min-width: 250px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideFade 0.5s forwards, fadeOut 0.5s 4s forwards;
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+
+
+
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
   .contact-flex {
@@ -1606,9 +1748,12 @@ input[type="checkbox"]:checked::after {
 }
 
 .footer {
-  background-color: var(--rich-black); /* Dark base */
-  color: var(--china-pink);            /* Muted but stylish */
-  box-shadow: 0 -2px 25px rgba(231, 0, 125, 0.3);  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: var(--rich-black);
+  /* Dark base */
+  color: var(--china-pink);
+  /* Muted but stylish */
+  box-shadow: 0 -2px 25px rgba(231, 0, 125, 0.3);
+  padding: var(--spacing-lg) var(--spacing-md);
   text-align: center;
 }
 
@@ -1647,6 +1792,7 @@ input[type="checkbox"]:checked::after {
   color: white;
   font-weight: 600;
 }
+
 .footer-text p:last-child {
   color: var(--text-muted);
   font-size: 14px;
@@ -2065,6 +2211,7 @@ body.light-mode .fill {
   .skill-bar span {
     font-size: 14.5px;
   }
+
   .bar {
     height: 8px;
   }
@@ -2092,6 +2239,55 @@ body.light-mode .fill {
     padding: 20px;
   }
 }
+
+@media (max-width: 600px) {
+  .career-card-modern {
+    padding: 24px 16px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px rgba(231, 0, 125, 0.2);
+  }
+
+  .career-heading {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .career-heading h2 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--mexican-pink);
+  }
+
+  .career-subtitle {
+    font-size: 0.9rem;
+    color: var(--china-pink);
+    line-height: 1.4;
+  }
+
+  .goal-text p {
+    font-size: 1rem;
+    line-height: 1.75;
+    padding: 0 4px;
+    text-align: justify;
+  }
+
+  .callout-box-modern {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    padding: 12px 14px;
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .callout-box-modern i {
+    font-size: 20px;
+  }
+}
+
 
 
 /* === Scroll Animations === */
@@ -2722,6 +2918,3 @@ body.light-mode .FirstElement .profile-photo {
   display: flex;
   justify-content: center;
 } */
-
-
-

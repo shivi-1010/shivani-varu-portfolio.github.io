@@ -41,30 +41,36 @@ const Utils = {
         }
       });
     } catch (error) {
-      console.error("Error updating active section:", error);
+      this.handleError("Error updating active section:", error);
     }
   },
 
   revealElements: function () {
     try {
       const elements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-zoom");
+      const windowHeight = window.innerHeight;
+      const visibleThreshold = 120;
+
       elements.forEach((el) => {
-        const windowHeight = window.innerHeight;
         const elementTop = el.getBoundingClientRect().top;
-        const visibleThreshold = 120;
 
         if (elementTop < windowHeight - visibleThreshold) {
           el.classList.add("active");
         }
       });
     } catch (error) {
-      console.error("Error revealing elements:", error);
+      this.handleError("Error revealing elements:", error);
     }
   },
 
-  getRecaptchaSiteKey: function () {
-    return "6Ld7Sh4rAAAAAFjepNd5uzi6Y1ihcmJMepnNTUzA";
+  handleError: function (message, error) {
+    console.error(message, error);
+    // Optionally, display a user-friendly message
   },
+
+  // getRecaptchaSiteKey: function () {
+  //   return "6Ld7Sh4rAAAAAFjepNd5uzi6Y1ihcmJMepnNTUzA";
+  // },
 };
 
 // UI module
@@ -78,14 +84,14 @@ const UI = {
       this.initThemeToggle();
       this.initTyped();
       this.initMobileSidebar();
-      this.initProjectTabs(); // ✅ new project tab logic
+      this.initProjectTabs();
       this.initCopyrightYear();
 
       const debouncedRevealElements = Utils.debounce(Utils.revealElements, 100);
       window.addEventListener("scroll", debouncedRevealElements);
       window.addEventListener("load", Utils.revealElements);
     } catch (error) {
-      console.error("Error initializing UI:", error);
+      Utils.handleError("Error initializing UI:", error);
     }
   },
 
@@ -103,37 +109,40 @@ const UI = {
         debouncedUpdateActiveSection();
       });
     } catch (error) {
-      console.error("Error initializing sticky header:", error);
+      Utils.handleError("Error initializing sticky header:", error);
     }
   },
 
   initSmoothScroll: function () {
     try {
-      document.querySelectorAll(".navbar a, .mobile-sidebar a").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute("href");
-          if (!targetId || targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (!targetElement) return;
-
-          const offset = targetId === "#home" ? 0 : targetElement.offsetTop - 80;
-          window.scrollTo({ top: offset, behavior: "smooth" });
-
-          const mobileSidebar = document.getElementById("mobileSidebar");
-          const sidebarOverlay = document.getElementById("sidebarOverlay");
-          const menuToggle = document.getElementById("menuToggle");
-
-          if (mobileSidebar?.classList.contains("active")) {
-            mobileSidebar.classList.remove("active");
-            sidebarOverlay?.classList.remove("active");
-            menuToggle?.setAttribute("aria-expanded", "false");
-          }
-        });
+      const links = document.querySelectorAll(".navbar a, .mobile-sidebar a");
+      links.forEach((link) => {
+        link.addEventListener("click", this.handleSmoothScroll);
       });
     } catch (error) {
-      console.error("Error initializing smooth scroll:", error);
+      Utils.handleError("Error initializing smooth scroll:", error);
+    }
+  },
+
+  handleSmoothScroll: function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    if (!targetId || targetId === "#") return;
+
+    const targetElement = document.querySelector(targetId);
+    if (!targetElement) return;
+
+    const offset = targetId === "#home" ? 0 : targetElement.offsetTop - 80;
+    window.scrollTo({ top: offset, behavior: "smooth" });
+
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+    const menuToggle = document.getElementById("menuToggle");
+
+    if (mobileSidebar?.classList.contains("active")) {
+      mobileSidebar.classList.remove("active");
+      sidebarOverlay?.classList.remove("active");
+      menuToggle?.setAttribute("aria-expanded", "false");
     }
   },
 
@@ -165,7 +174,7 @@ const UI = {
       sr.reveal(".contact-info", { origin: "left" });
       sr.reveal(".contact-form", { origin: "right" });
     } catch (error) {
-      console.error("Error initializing ScrollReveal:", error);
+      Utils.handleError("Error initializing ScrollReveal:", error);
     }
   },
 
@@ -173,115 +182,115 @@ const UI = {
     try {
       const tabButtons = document.querySelectorAll(".tab-btn");
       const projectCards = document.querySelectorAll(".project");
-  
+
       tabButtons.forEach((button) => {
         button.addEventListener("click", () => {
           tabButtons.forEach((btn) => btn.classList.remove("active"));
           button.classList.add("active");
-  
+
           const category = button.getAttribute("data-category");
-  
+
           projectCards.forEach((card) => {
             card.classList.remove("show");
             if (category === "all" || card.dataset.category === category) {
-              card.classList.add("show"); // 👈 this is the key change
+              card.classList.add("show");
             }
           });
         });
       });
-  
+
       document.querySelector(".tab-btn[data-category='all']")?.click();
     } catch (error) {
-      console.error("Error initializing project tab filters:", error);
+      Utils.handleError("Error initializing project tab filters:", error);
     }
   },
-  
 
   initContactForm: function () {
     try {
-      const form = document.forms["submitToGoogleSheet"];
-      if (!form) return;
+        const form = document.forms["submitToGoogleSheet"];
+        if (!form) return;
 
-      const msg = document.getElementById("msg");
-      const loader = form.querySelector(".loader");
-      const buttonText = form.querySelector(".button-text");
+        const loader = form.querySelector(".loader");
+        const buttonText = form.querySelector(".button-text");
 
-      const validateForm = () => {
-        let isValid = true;
-        const nameInput = form.querySelector("#name");
-        const nameError = document.getElementById("nameError");
-        const emailInput = form.querySelector("#email");
-        const emailError = document.getElementById("emailError");
-        const messageInput = form.querySelector("#message");
-        const messageError = document.getElementById("messageError");
+        const validateForm = () => {
+            let isValid = true;
+            const nameInput = form.querySelector("#name");
+            const nameError = document.getElementById("nameError");
+            const emailInput = form.querySelector("#email");
+            const emailError = document.getElementById("emailError");
+            const messageInput = form.querySelector("#message");
+            const messageError = document.getElementById("messageError");
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!nameInput.value.trim()) {
+                nameError.textContent = "Please enter your name";
+                isValid = false;
+            } else nameError.textContent = "";
 
-        if (!nameInput.value.trim()) {
-          nameError.textContent = "Please enter your name";
-          isValid = false;
-        } else nameError.textContent = "";
+            if (!emailInput.value.trim()) {
+                emailError.textContent = "Please enter your email";
+                isValid = false;
+            } else if (!emailRegex.test(emailInput.value)) {
+                emailError.textContent = "Please enter a valid email address";
+                isValid = false;
+            } else emailError.textContent = "";
 
-        if (!emailInput.value.trim()) {
-          emailError.textContent = "Please enter your email";
-          isValid = false;
-        } else if (!emailRegex.test(emailInput.value)) {
-          emailError.textContent = "Please enter a valid email address";
-          isValid = false;
-        } else emailError.textContent = "";
+            if (!messageInput.value.trim()) {
+                messageError.textContent = "Please enter your message";
+                isValid = false;
+            } else messageError.textContent = "";
 
-        if (!messageInput.value.trim()) {
-          messageError.textContent = "Please enter your message";
-          isValid = false;
-        } else messageError.textContent = "";
+            return isValid;
+        };
 
-        return isValid;
-      };
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!validateForm()) return;
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!validateForm()) return;
+            const payload = new URLSearchParams({
+                NAME: form.name.value,
+                EMAIL: form.email.value,
+                SUBJECT: form.subject.value,
+                MESSAGE: form.message.value,
+            });
 
-        const consentCheckbox = document.getElementById("consent");
-        if (consentCheckbox && !consentCheckbox.checked) {
-          msg.innerHTML = "Please agree to the consent checkbox.";
-          msg.className = "error-message";
-          return;
-        }
+            buttonText.style.display = "none";
+            loader.style.display = "inline-block";
+            form.querySelector("button[type='submit']").disabled = true;
 
-        const payload = new URLSearchParams({
-          NAME: form.name.value,
-          EMAIL: form.email.value,
-          SUBJECT: form.subject.value,
-          MESSAGE: form.message.value,
-          "g-recaptcha-response": document.querySelector('textarea[name="g-recaptcha-response"]')?.value,
+            fetch(form.action, {
+                method: "POST",
+                body: payload,
+            })
+                .then((response) => response.text())
+                .then((text) => {
+                    try {
+                        const data = JSON.parse(text);
+                        showToast(data.message, data.success ? "success" : "error");
+                        if (data.success) {
+                            form.reset();
+                        }
+                    } catch (err) {
+                        console.error("JSON parse error:", err, text);
+                        showToast("Something went wrong. Please try again.", "error");
+                    }
+                    if (buttonText) buttonText.style.display = "inline-block";
+                    if (loader) loader.style.display = "none";
+                    form.querySelector("button[type='submit']").disabled = false;
+                })
+                .catch((error) => {
+                    console.error("Form submission error:", error);
+                    showToast("Something went wrong. Please try again.", "error");
+                    if (buttonText) buttonText.style.display = "inline-block";
+                    if (loader) loader.style.display = "none";
+                    form.querySelector("button[type='submit']").disabled = false;
+                });
         });
-
-        fetch(form.action, {
-          method: "POST",
-          body: payload,
-        })
-          .then((response) => response.json())
-          .then(() => {
-            msg.innerHTML = "Message sent successfully!";
-            msg.className = "success-message";
-            form.reset();
-            if (buttonText) buttonText.style.display = "inline-block";
-            if (loader) loader.style.display = "none";
-            setTimeout(() => { msg.innerHTML = ""; msg.className = ""; }, 5000);
-          })
-          .catch((error) => {
-            console.error("Form submission error:", error);
-            msg.innerHTML = "Something went wrong. Please try again.";
-            msg.className = "error-message";
-            if (buttonText) buttonText.style.display = "inline-block";
-            if (loader) loader.style.display = "none";
-          });
-      });
     } catch (error) {
-      console.error("Error initializing contact form:", error);
+        Utils.handleError("Error initializing contact form:", error);
     }
-  },
+},
 
   initThemeToggle: function () {
     try {
@@ -306,7 +315,7 @@ const UI = {
         }
       });
     } catch (error) {
-      console.error("Error initializing theme toggle:", error);
+      Utils.handleError("Error initializing theme toggle:", error);
     }
   },
 
@@ -331,7 +340,7 @@ const UI = {
         });
       }
     } catch (error) {
-      console.error("Error initializing Typed.js:", error);
+      Utils.handleError("Error initializing Typed.js:", error);
     }
   },
 
@@ -363,7 +372,7 @@ const UI = {
         });
       });
     } catch (error) {
-      console.error("Error initializing mobile sidebar:", error);
+      Utils.handleError("Error initializing mobile sidebar:", error);
     }
   },
 
@@ -374,10 +383,22 @@ const UI = {
         yearElement.textContent = new Date().getFullYear().toString();
       }
     } catch (error) {
-      console.error("Error setting copyright year:", error);
+      Utils.handleError("Error setting copyright year:", error);
     }
   },
 };
+
+function showToast(message, type = "success") {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  toast.innerText = message;
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 4500); // Match CSS animation time
+}
 
 // Initialize the entire UI
 document.addEventListener("DOMContentLoaded", function () {
