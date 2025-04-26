@@ -165,7 +165,7 @@ const UI = {
       sr.reveal(".profile-text", { origin: "right", distance: "80px", duration: 1000 });
       sr.reveal(".about-content", { origin: "left", delay: 300 });
       sr.reveal(".about-skills", { origin: "right", delay: 300 });
-      sr.reveal(".tech-skills", { origin: "bottom", distance: "40px", duration: 1000, interval: 200 });
+      sr.reveal(".skill-bar,", { origin: "bottom", distance: "40px", duration: 1000, interval: 200 });
       sr.reveal(".education-column", { origin: "bottom", interval: 300 });
       sr.reveal(".project-title", { origin: "top" });
       sr.reveal(".project", { origin: "bottom", interval: 100 });
@@ -207,90 +207,23 @@ const UI = {
 
   initContactForm: function () {
     try {
-        const form = document.forms["submitToGoogleSheet"];
-        if (!form) return;
-
+      const form = document.forms["submitToGoogleSheet"];
+      if (!form) return;
+  
+      // NO fetch, just normal browser submit
+      form.addEventListener("submit", function () {
         const loader = form.querySelector(".loader");
         const buttonText = form.querySelector(".button-text");
-
-        const validateForm = () => {
-            let isValid = true;
-            const nameInput = form.querySelector("#name");
-            const nameError = document.getElementById("nameError");
-            const emailInput = form.querySelector("#email");
-            const emailError = document.getElementById("emailError");
-            const messageInput = form.querySelector("#message");
-            const messageError = document.getElementById("messageError");
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (!nameInput.value.trim()) {
-                nameError.textContent = "Please enter your name";
-                isValid = false;
-            } else nameError.textContent = "";
-
-            if (!emailInput.value.trim()) {
-                emailError.textContent = "Please enter your email";
-                isValid = false;
-            } else if (!emailRegex.test(emailInput.value)) {
-                emailError.textContent = "Please enter a valid email address";
-                isValid = false;
-            } else emailError.textContent = "";
-
-            if (!messageInput.value.trim()) {
-                messageError.textContent = "Please enter your message";
-                isValid = false;
-            } else messageError.textContent = "";
-
-            return isValid;
-        };
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            if (!validateForm()) return;
-
-            const payload = new URLSearchParams({
-                NAME: form.name.value,
-                EMAIL: form.email.value,
-                SUBJECT: form.subject.value,
-                MESSAGE: form.message.value,
-            });
-
-            buttonText.style.display = "none";
-            loader.style.display = "inline-block";
-            form.querySelector("button[type='submit']").disabled = true;
-
-            fetch(form.action, {
-                method: "POST",
-                body: payload,
-            })
-                .then((response) => response.text())
-                .then((text) => {
-                    try {
-                        const data = JSON.parse(text);
-                        showToast(data.message, data.success ? "success" : "error");
-                        if (data.success) {
-                            form.reset();
-                        }
-                    } catch (err) {
-                        console.error("JSON parse error:", err, text);
-                        showToast("Something went wrong. Please try again.", "error");
-                    }
-                    if (buttonText) buttonText.style.display = "inline-block";
-                    if (loader) loader.style.display = "none";
-                    form.querySelector("button[type='submit']").disabled = false;
-                })
-                .catch((error) => {
-                    console.error("Form submission error:", error);
-                    showToast("Something went wrong. Please try again.", "error");
-                    if (buttonText) buttonText.style.display = "inline-block";
-                    if (loader) loader.style.display = "none";
-                    form.querySelector("button[type='submit']").disabled = false;
-                });
-        });
+  
+        buttonText.style.display = "none";
+        loader.style.display = "inline-block";
+      });
     } catch (error) {
-        Utils.handleError("Error initializing contact form:", error);
+      Utils.handleError("Error initializing contact form:", error);
     }
-},
+  },
+  
+  
 
   initThemeToggle: function () {
     try {
@@ -388,19 +321,41 @@ const UI = {
   },
 };
 
+
 function showToast(message, type = "success") {
-  const toastContainer = document.getElementById("toast-container");
-  const toast = document.createElement("div");
-  toast.className = `toast ${type}`;
-  toast.innerText = message;
-  toastContainer.appendChild(toast);
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.className = `toast show ${type}`;
+  toast.classList.remove("hidden");
 
   setTimeout(() => {
-    toast.remove();
-  }, 4500); // Match CSS animation time
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 400);
+  }, 4000);
 }
 
-// Initialize the entire UI
 document.addEventListener("DOMContentLoaded", function () {
-  UI.init();
+  UI.init(); // your existing UI code
+
+  if (window.location.href.includes("?success=true")) {
+    showToast("Message sent successfully!", "success");
+    const cleanUrl = window.location.href.split("?")[0];
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  UI.init(); // initialize your UI
+
+  // Show toast if success query param exists
+  if (window.location.href.includes("?success=true")) {
+    showToast("Message sent successfully!", "success");
+
+    // Clean up the URL
+    const cleanUrl = window.location.href.split("?")[0];
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+});
+

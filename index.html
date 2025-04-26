@@ -644,67 +644,48 @@
     <section class="contact-content" id="contact">
       <div class="container">
         <div class="contact-title">
-          <h4>LET'S CONNECT</h4>
-          <p>Have a question, opportunity, or just want to say hi? Drop a message below!</p>
+          <h4>Contact Me</h4>
+          <p>I'd love to hear from you! Please fill out the form below and I'll get back to you shortly.</p>
         </div>
+    
         <div class="contact-flex">
-          <!-- Contact Info -->
+          <!-- Contact Info (Optional) -->
           <div class="contact-info">
-            <h5>Reach Me At</h5>
-
-            <a href="mailto:varushivani@gmail.com" aria-label="Email">
-              <i class="fa fa-envelope"></i> varushivani@gmail.com
-            </a>
-
-            <a href="https://www.linkedin.com/in/shivani-varu-1012000/" target="_blank" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i> LinkedIn Profile
-            </a>
-
-            <a href="https://github.com/shivi-1010" target="_blank" aria-label="GitHub">
-              <i class="fab fa-github"></i> GitHub Profile
-            </a>
-
-            <a href="tel:+15195805851" aria-label="Phone">
-              <i class="fa fa-phone"></i> +1 (519) 580-5851
-            </a>
+            <h5>Reach Me</h5>
+            <a href="mailto:varushivani@gmail.com"><i class="fa fa-envelope"></i> varushivani@gmail.com</a>
+            <a href="https://linkedin.com/in/shivani-varu-1012000/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/shivi-1010" target="_blank"><i class="fab fa-github"></i> GitHub</a>
           </div>
-
-
-
+    
           <!-- Contact Form -->
-          <form name="submitToGoogleSheet" class="contact-form" method="POST"
+          <form name="submitToGoogleSheet" method="POST" class="contact-form" id="contactForm"
             action="https://script.google.com/macros/s/AKfycby_eAofGkx-gJ4K9cnHEyvcwbQOF9Ed3ILoyMi-tZghX0vai6tsnIRJ7MP1NvwJUXaS/exec">
-
-            <input type="text" id="name" name="NAME" placeholder="Your Name *" required>
-            <small id="nameError" class="error-msg" aria-live="polite"></small>
-
-            <input type="email" id="email" name="EMAIL" placeholder="Your Email *" required>
-            <small id="emailError" class="error-msg" aria-live="polite"></small>
-
-            <input type="text" id="subject" name="SUBJECT" placeholder="Subject">
-
-            <textarea id="message" name="MESSAGE" rows="5" placeholder="Your Message *" required></textarea>
-            <small id="messageError" class="error-msg" aria-live="polite"></small>
-
+    
+            <input type="text" id="name" name="name" placeholder="Your Name *" required>
+            <input type="email" id="email" name="email" placeholder="Your Email *" required>
+            <input type="text" id="subject" name="subject" placeholder="Subject">
+            <textarea id="message" name="message" rows="5" placeholder="Your Message *" required></textarea>
+    
             <div class="form-consent">
               <label for="consent">
                 <input type="checkbox" id="consent" required>
                 I consent to having this website store my submitted information.
               </label>
             </div>
-
+    
             <button type="submit" class="submit">
               <span class="button-text">Send Message</span>
-              <span class="loader" style="display: none;"></span>
             </button>
-
+    
             <span id="msg" role="alert" aria-live="assertive"></span>
           </form>
-
-        
         </div>
       </div>
+    
+      <!-- Toast Notification -->
+      <div id="toast" class="toast hidden"></div>
     </section>
+    
 
     <noscript>
       <div class="noscript-msg">Please enable JavaScript to use the contact form.</div>
@@ -732,7 +713,26 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-<div id="toast-container"></div>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <div id="formSuccessMessage" style="
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  font-weight: 600;
+  font-size: 16px;
+  z-index: 9999;
+  transition: top 0.6s ease;
+">
+    Message sent successfully!
+  </div>
 
 
 </body>
