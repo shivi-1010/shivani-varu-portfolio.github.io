@@ -20,39 +20,7 @@
   --bg-light: #fafafa;
   --bg-light-card: #fff0f6;
 
-  /* Light theme colors */
-  --light-smitten: #E076B7;
-  --light-china-pink: #F0A0C2;
-  --light-carnation-pink: #FFCCE0;
-  --light-mexican-pink: #FF5AAD;
-
-
-  /* Light theme backgrounds */
-  --light-bg-primary: #FFFFFF;
-  --light-bg-secondary: #F8F0F5;
-  --light-bg-card: #FFF0F8;
-  --light-bg-accent: #FCE6F1;
-
-  /* Light theme text */
-  --light-text-primary: #333333;
-  --light-text-secondary: #555555;
-  --light-text-muted: #777777;
-  --light-text-accent: var(--smitten);
-
-  /* Light theme borders & shadows */
-  --light-border-light: #E8D0DE;
-  --light-border-medium: #D8B0C8;
-  --light-shadow-soft: rgba(199, 57, 135, 0.08);
-  --light-shadow-medium: rgba(199, 57, 135, 0.15);
-  --light-shadow-button: rgba(199, 57, 135, 0.3);
-
-  /* Additional light theme variables */
-  --light-shadow-card: var(--light-shadow-soft);
-  --light-shadow-button: rgba(199, 57, 135, 0.3);
-  --light-bg-callout: #FCE6F1;
-  --light-text-placeholder: #999999;
-  --light-border-color: #E8D0DE;
-
+  
 
   /* Theme switching variables (default to dark theme) */
   --current-bg-primary: var(--bg-primary);
@@ -135,6 +103,7 @@ body {
   line-height: 24px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
+
 }
 
 h1,
@@ -154,6 +123,29 @@ h6 {
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
+
+body, 
+header, 
+footer, 
+section, 
+div, 
+p, 
+h1, h2, h3, h4, h5, h6, 
+a {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.card, 
+.skills-card, 
+.experience-card, 
+.project, 
+.cert-card, 
+button, 
+input, 
+textarea {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
 
 /*---------------------------Header---------------------------*/
 .logo {
@@ -363,14 +355,38 @@ h6 {
   margin-bottom: 4px;
 }
 
-/* Typed text styling */
+
 #typed-role {
   display: inline-block;
-  min-height: 24px;
-  font-weight: 500;
-  color: var(--china-pink);
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: var(--carnation-pink);
+  font-family: 'Poppins', sans-serif;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+/* Style the cursor from Typed.js */
+.typed-cursor {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--smitten);
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Blink animation
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+ */
+
 
 /* Paragraph refinement */
 .profile-text p {
@@ -503,11 +519,11 @@ h6 {
 
 .about-content p {
   color: var(--text-primary);
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
   text-align: justify;
-  text-justify: inter-word;
+  margin-bottom: 20px;
 
 }
 
@@ -675,9 +691,9 @@ h6 {
   transition: width 1.8s ease-in-out;
 }
 
-.tech-skills.active .fill {
+/* .tech-skills.active .fill {
   animation: growBar 2s ease forwards;
-}
+} */
 
 @keyframes growBar {
   from {
@@ -845,13 +861,6 @@ h6 {
   margin-bottom: 6px;
 }
 
-
-
-
-
-
-
-/* Experience Section */
 /*--------------------------- Experience Section ---------------------------*/
 .experience {
   padding: 80px 20px;
@@ -1000,6 +1009,8 @@ h6 {
   /* ⬅️ Force to bottom of card */
 
 }
+
+
 
 /*---------------------------Project Section---------------------------*/
 
@@ -1576,7 +1587,7 @@ h6 {
   font-size: 14px;
 }
 
-/* === Consent + reCAPTCHA + Button === */
+/* === Consent  === */
 .form-consent {
   display: flex;
   align-items: center;
@@ -1599,7 +1610,6 @@ input[type="checkbox"] {
   background-color: transparent;
   position: relative;
   top: 0.1em;
-  /* ✅ This is the key */
   margin: 0;
   padding: 0;
   cursor: pointer;
@@ -1671,71 +1681,71 @@ input[type="checkbox"]:checked::after {
   margin-top: var(--spacing-sm);
 }
 
+/* === Toast Common Styling === */
 .toast {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  background-color: #24c78e;
-  color: #fff;
-  padding: 14px 24px;
-  border-radius: 8px;
-  font-weight: 500;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  top: 90px; /* Below navbar */
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: #2b2b2b; /* Dark grey for dark mode */
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   opacity: 0;
-  transform: translateY(-30px);
   transition: all 0.4s ease;
   z-index: 9999;
+  text-align: center;
+  max-width: 320px;
+  width: auto;
 }
 
+/* === When Toast is Visible === */
 .toast.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 
-.toast.error {
-  background-color: #e74c3c;
-}
-
+/* === When Toast is Hidden === */
 .toast.hidden {
   display: none;
 }
+
+/* === Success Toast === */
 .toast.success {
-  background-color: #2ecc71;
+  background: #27ae60; /* Elegant green for success */
+  color: #ffffff;
 }
 
+/* === Error Toast === */
+.toast.error {
+  background: #e74c3c; /* Bright but soft red for error */
+  color: #ffffff;
+}
+
+/* === Smooth Slide Fade Animation (optional) === */
 @keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 }
 
+/* === Smooth Fade Out Animation (optional) === */
 @keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
   to {
     opacity: 0;
-    transform: translateY(-20px);
-  }
-}
-
-
-
-
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .contact-flex {
-    flex-direction: column;
-    gap: 40px;
-    align-items: stretch;
-  }
-
-  .form-consent {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .contact-form .submit {
-    max-width: 100%;
+    transform: translateX(-50%) translateY(-20px);
   }
 }
 
@@ -1803,387 +1813,8 @@ input[type="checkbox"]:checked::after {
 }
 
 
-/* === Light Theme Overrides === */
-body.light-mode {
-  /* Switch to light theme variables */
-  background-color: var(--light-bg-primary);
-  color: var(--light-text-primary);
-}
 
-body.light-mode .theme-toggle label {
-  color: var(--mexican-pink);
-}
 
-/* === Section Backgrounds === */
-body.light-mode .header-area {
-  background-color: var(--light-bg-primary);
-  color: var(--light-text-primary);
-}
-
-body.light-mode .about-area,
-body.light-mode .education-highlight-section,
-/* body.light-mode .experience-content, */
-body.light-mode .project-content,
-body.light-mode .certificates-content,
-body.light-mode .contact-content {
-  background-color: var(--light-bg-secondary);
-  color: var(--light-text-primary);
-}
-
-body.light-mode .footer {
-  background-color: var(--light-bg-primary);
-  border-top: 2px solid var(--light-mexican-pink);
-}
-
-/* === Text Colors === */
-body.light-mode .header-area ul li a,
-body.light-mode .profile-text p,
-body.light-mode .timeline-title,
-body.light-mode .timeline-text,
-body.light-mode .about-content ul,
-body.light-mode p,
-body.light-mode .goal-text,
-body.light-mode .footer-text p {
-  color: var(--light-text-primary);
-}
-
-body.light-mode .footer-text p {
-  color: var(--light-text-secondary);
-}
-
-body.light-mode .footer-text strong {
-  color: var(--smitten);
-}
-
-/* === Card Styling === */
-body.light-mode .project,
-body.light-mode .cert-card,
-body.light-mode .education-card,
-body.light-mode .education-sidecard,
-body.light-mode .skills-card,
-body.light-mode .skills-cert-panel {
-  background-color: var(--light-bg-card);
-  color: var(--light-text-primary);
-  border-left: 4px solid var(--smitten);
-  box-shadow: 0 0 10px var(--light-shadow-soft);
-  border: none;
-}
-
-/* === Card Headings === */
-body.light-mode .education-card h3,
-body.light-mode .education-sidecard h3,
-body.light-mode .cert-card h5,
-body.light-mode .skill-bar span,
-body.light-mode .skills-card h4,
-body.light-mode .project h4,
-body.light-mode .section-title h4,
-body.light-mode .contact-title h4 {
-  color: var(--smitten);
-  font-weight: 600;
-}
-
-/* === Card List Items === */
-body.light-mode .education-card li,
-body.light-mode .education-sidecard li,
-body.light-mode .skills-card li {
-  color: var(--light-text-secondary);
-  font-weight: 500;
-  border-bottom: 1px dashed var(--light-border-light);
-}
-
-body.light-mode .education-card li i,
-body.light-mode .education-sidecard li i {
-  color: var(--smitten);
-}
-
-/* === Buttons === */
-body.light-mode .btn,
-body.light-mode .project-buttons .btn,
-body.light-mode .cert-card .btn {
-  background-color: var(--smitten);
-  color: #fff;
-  font-weight: bold;
-  transition: var(--transition-fast);
-  border: 2px solid transparent;
-}
-
-body.light-mode .btn:hover,
-body.light-mode .project-buttons .btn:hover,
-body.light-mode .cert-card .btn:hover {
-  background-color: #fff;
-  color: var(--smitten);
-  border: 2px solid var(--smitten);
-}
-
-/* === CTA Button === */
-body.light-mode .btn.cta,
-body.light-mode .project-buttons .btn.cta,
-body.light-mode .cert-card .btn.cta {
-  box-shadow: 0 0 10px var(--smitten), 0 0 20px rgba(199, 57, 135, 0.3);
-  animation: glowPulseBtnLight 2.5s ease-in-out infinite;
-  will-change: box-shadow;
-}
-
-body.light-mode .btn.cta:hover,
-body.light-mode .project-buttons .btn.cta:hover,
-body.light-mode .cert-card .btn.cta:hover {
-  animation: none;
-  box-shadow: 0 0 12px var(--smitten);
-}
-
-@keyframes glowPulseBtnLight {
-
-  0%,
-  100% {
-    box-shadow: 0 0 8px var(--smitten), 0 0 18px rgba(199, 57, 135, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 16px var(--smitten), 0 0 26px rgba(199, 57, 135, 0.5);
-  }
-}
-
-/* === Form Elements === */
-body.light-mode .contact-form input,
-body.light-mode .contact-form textarea {
-  background-color: var(--light-bg-primary);
-  color: var(--light-text-primary);
-  border: 1px solid var(--light-border-light);
-}
-
-body.light-mode .contact-form input::placeholder,
-body.light-mode .contact-form textarea::placeholder {
-  color: var(--light-text-muted);
-}
-
-/* === Social Icons === */
-body.light-mode .social i,
-body.light-mode .footer-socials a,
-body.light-mode .contact-info a i {
-  color: var(--light-text-primary);
-}
-
-body.light-mode .social a {
-  color: var(--smitten);
-}
-
-body.light-mode .social i:hover,
-body.light-mode .footer-socials a:hover,
-body.light-mode .social a:hover {
-  color: var(--light-mexican-pink);
-}
-
-
-/* === Light Mode Fixes for Personal Skills Section === */
-body.light-mode .skills-language-section {
-  background-color: var(--light-bg-secondary);
-}
-
-body.light-mode .skills-card {
-  background-color: var(--light-bg-card);
-  border-left: 4px solid var(--smitten);
-  box-shadow: 0 5px 15px var(--light-shadow-soft);
-}
-
-body.light-mode .skills-card h4 {
-  color: var(--smitten);
-}
-
-body.light-mode .skills-card ul {
-  color: var(--light-text-secondary);
-}
-
-body.light-mode .skills-card li {
-  color: var(--light-text-secondary);
-  border-bottom: 1px dashed var(--light-border-light);
-}
-
-body.light-mode .skills-card li:last-child {
-  border-bottom: none;
-}
-
-body.light-mode .skills-card li i {
-  color: var(--smitten);
-}
-
-body.light-mode .section-title.center p {
-  color: var(--light-text-secondary);
-}
-
-/* Fix for language icons and soft skills text in light mode */
-body.light-mode .language-icons p,
-body.light-mode .soft-skills p {
-  color: var(--light-text-secondary);
-}
-
-/* === Light Mode for Experience Cards === */
-body.light-mode .experience {
-  background-color: var(--light-bg-secondary);
-}
-
-body.light-mode .experience-card {
-  background-color: var(--light-bg-card);
-  color: var(--light-text-primary);
-  box-shadow: 0 5px 15px var(--light-shadow-soft);
-  border-left: 4px solid var(--light-smitten);
-}
-
-body.light-mode .experience-card h3 {
-  color: var(--light-text-primary);
-}
-
-body.light-mode .experience-card h4 {
-  color: var(--light-text-secondary);
-}
-
-body.light-mode .experience-card ul {
-  color: var(--light-text-primary);
-}
-
-body.light-mode .experience-card .tools {
-  color: var(--light-text-secondary);
-}
-
-body.light-mode .experience-card .date-location {
-  color: var(--light-text-muted);
-}
-
-body.light-mode .experience .heading {
-  color: var(--smitten);
-}
-
-
-/* === Special Sections === */
-/* Career Goals Card */
-body.light-mode #career-goals {
-  background-color: var(--light-bg-primary);
-}
-
-body.light-mode #career-goals .career-card-modern {
-  background-color: var(--light-bg-card);
-  color: var(--light-text-primary);
-  border: 1px solid var(--light-border-light);
-  box-shadow: 0 10px 30px var(--light-shadow-soft);
-}
-
-body.light-mode #career-goals .callout-box-modern {
-  background-color: var(--light-bg-accent);
-  color: var(--light-text-secondary);
-  border-left: 4px solid var(--china-pink);
-}
-
-/* Volunteer Section */
-body.light-mode #volunteering {
-  background-color: var(--light-bg-secondary);
-}
-
-body.light-mode #volunteering .volunteer-card {
-  background-color: var(--light-bg-primary);
-  color: var(--light-text-primary);
-  box-shadow: 0 15px 30px var(--light-shadow-soft);
-  border-left: 4px solid var(--carnation-pink);
-}
-
-body.light-mode #volunteering p {
-  color: var(--light-text-primary);
-}
-
-body.light-mode #volunteering .volunteer-icon {
-  background-color: var(--light-mexican-pink);
-}
-
-/* === Disabled Button State === */
-body.light-mode .cert-card .btn.disabled {
-  background-color: #f2f2f2;
-  color: #888;
-  border: 1px solid var(--light-border-light);
-}
-
-/* === Profile Text Heading === */
-body.light-mode .profile-text h5 {
-  color: var(--china-pink);
-  font-weight: 500;
-}
-
-body.light-mode .profile-text h1 {
-  color: var(--mexican-pink);
-}
-
-/* === Timeline Elements === */
-body.light-mode .timeline-box {
-  border-left: 4px solid var(--light-mexican-pink);
-}
-
-body.light-mode .circle-dot {
-  background-color: var(--light-carnation-pink);
-}
-
-body.light-mode .timeline-title i {
-  color: var(--light-china-pink);
-}
-
-/* === Light Mode for Profile Photo === */
-body.light-mode .FirstElement .profile-photo {
-  border: 6px solid var(--light-carnation-pink);
-  box-shadow:
-    0 0 4px rgba(253, 165, 200, 0.4),
-    0 0 8px rgba(253, 165, 200, 0.3);
-  animation: glowPulseLight 3s ease-in-out infinite;
-}
-
-@keyframes glowPulseLight {
-  0% {
-    box-shadow: 0 0 8px var(--light-mexican-pink), 0 0 16px rgba(255, 90, 173, 0.3);
-  }
-
-  50% {
-    box-shadow: 0 0 14px var(--light-smitten), 0 0 26px rgba(224, 118, 183, 0.5);
-  }
-
-  100% {
-    box-shadow: 0 0 8px var(--light-mexican-pink), 0 0 16px rgba(255, 90, 173, 0.3);
-  }
-}
-
-
-
-
-/* === Mobile Sidebar Light Mode === */
-body.light-mode .mobile-sidebar {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
-}
-
-body.light-mode .mobile-sidebar ul li {
-  border-bottom: 1px solid var(--light-border-light);
-}
-
-body.light-mode .mobile-sidebar ul li a {
-  color: var(--light-text-primary);
-}
-
-body.light-mode .mobile-sidebar ul li a:hover {
-  color: var(--mexican-pink);
-}
-
-body.light-mode .mobile-sidebar ul li i {
-  color: var(--china-pink);
-}
-
-/* === Header Area Sticky in Light Mode === */
-body.light-mode .header-area.sticky {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 20px rgba(199, 57, 135, 0.2);
-}
-
-/* === Skill Bar in Light Mode === */
-body.light-mode .bar {
-  background-color: #e0e0e0;
-}
-
-body.light-mode .fill {
-  background-color: var(--mexican-pink);
-}
 
 
 
@@ -2291,6 +1922,24 @@ body.light-mode .fill {
   }
 }
 
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .contact-flex {
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .form-consent {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-form .submit {
+    max-width: 100%;
+  }
+}
 
 
 /* === Scroll Animations === */
@@ -2492,13 +2141,7 @@ body.light-mode .fill {
     0 0 0px var(--mexican-pink);
 }
 
-/* === Neon Text Styling (Light Mode) === */
-body.light-mode .neon-text {
-  color: var(--china-pink);
-  text-shadow:
-    0 0 2px #EFA9AE,
-    0 0 4px #EFA9AE;
-}
+
 
 /* === Profile Photo Pulse Animation === */
 .FirstElement .profile-photo {
@@ -2533,13 +2176,7 @@ body.light-mode .neon-text {
 
 
 
-/* === Light Mode for Profile Photo === */
-body.light-mode .FirstElement .profile-photo {
-  border: 6px solid var(--carnation-pink);
-  box-shadow:
-    0 0 4px rgba(253, 165, 200, 0.4),
-    0 0 8px rgba(253, 165, 200, 0.3);
-}
+
 
 /* === Utility Classes === */
 .text-center {

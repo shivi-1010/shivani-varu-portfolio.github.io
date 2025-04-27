@@ -165,7 +165,6 @@ const UI = {
       sr.reveal(".profile-text", { origin: "right", distance: "80px", duration: 1000 });
       sr.reveal(".about-content", { origin: "left", delay: 300 });
       sr.reveal(".about-skills", { origin: "right", delay: 300 });
-      sr.reveal(".skill-bar,", { origin: "bottom", distance: "40px", duration: 1000, interval: 200 });
       sr.reveal(".education-column", { origin: "bottom", interval: 300 });
       sr.reveal(".project-title", { origin: "top" });
       sr.reveal(".project", { origin: "bottom", interval: 100 });
@@ -223,34 +222,44 @@ const UI = {
     }
   },
   
-  
-
   initThemeToggle: function () {
     try {
       const toggle = document.getElementById("theme-switch");
       if (!toggle) return;
-
+  
       const body = document.body;
+      const lightModeStyle = document.getElementById("light-mode-style");
       const savedTheme = localStorage.getItem("theme");
-
+  
       if (savedTheme === "light") {
+        // If saved light mode, enable light
         body.classList.add("light-mode");
         toggle.checked = true;
+        if (lightModeStyle) lightModeStyle.disabled = false;
+      } else {
+        // Else (no saved theme or saved dark), force dark mode
+        body.classList.remove("light-mode");
+        toggle.checked = false;
+        if (lightModeStyle) lightModeStyle.disabled = true;
       }
-
+  
       toggle.addEventListener("change", () => {
         if (toggle.checked) {
           body.classList.add("light-mode");
           localStorage.setItem("theme", "light");
+          if (lightModeStyle) lightModeStyle.disabled = false;
         } else {
           body.classList.remove("light-mode");
           localStorage.setItem("theme", "dark");
+          if (lightModeStyle) lightModeStyle.disabled = true;
         }
       });
     } catch (error) {
       Utils.handleError("Error initializing theme toggle:", error);
     }
   },
+  
+  
 
   initTyped: function () {
     try {
@@ -260,18 +269,21 @@ const UI = {
       }
 
       const typedElement = document.getElementById("typed-role");
-      if (typedElement) {
-        new Typed("#typed-role", {
-          strings: ["Cloud Engineer", "DevOps Enthusiast", "Microsoft 365 Administrator", "IT Professional"],
-          typeSpeed: 50,
-          backSpeed: 30,
-          backDelay: 2000,
-          startDelay: 500,
-          loop: true,
-          showCursor: true,
-          cursorChar: "|",
-        });
-      }
+      new Typed("#typed-role", {
+        strings: [
+          "Cloud Engineer",
+          "DevOps Enthusiast",
+          "Microsoft 365 Administrator",
+          "IT Professional"
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        startDelay: 500,
+        loop: true,
+        showCursor: true,       // ✅ keep this
+        cursorChar: "|",        // ✅ standard cursor
+      });
     } catch (error) {
       Utils.handleError("Error initializing Typed.js:", error);
     }
@@ -323,6 +335,10 @@ const UI = {
 
 
 function showToast(message, type = "success") {
+  if (!message || message.trim() === "") {
+    return; // 👉 If message is empty or only spaces, do nothing
+  }
+
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.className = `toast show ${type}`;
@@ -336,26 +352,29 @@ function showToast(message, type = "success") {
   }, 4000);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  UI.init(); // your existing UI code
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  UI.init(); // Initialize your full UI system
+
+  // Handle Skill Bars
+  const fills = document.querySelectorAll(".skill-bar .fill");
+  fills.forEach(fill => {
+    const targetWidth = fill.style.getPropertyValue('--target-width');
+    if (targetWidth) {
+      setTimeout(() => {
+        fill.style.width = targetWidth;
+      }, 400); // Animate smoothly
+    }
+  });
+
+  // Handle Toast if success=true in URL
   if (window.location.href.includes("?success=true")) {
     showToast("Message sent successfully!", "success");
+
+    // Clean URL
     const cleanUrl = window.location.href.split("?")[0];
     window.history.replaceState({}, document.title, cleanUrl);
   }
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  UI.init(); // initialize your UI
-
-  // Show toast if success query param exists
-  if (window.location.href.includes("?success=true")) {
-    showToast("Message sent successfully!", "success");
-
-    // Clean up the URL
-    const cleanUrl = window.location.href.split("?")[0];
-    window.history.replaceState({}, document.title, cleanUrl);
-  }
-});
-
