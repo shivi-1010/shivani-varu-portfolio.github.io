@@ -1,7 +1,3 @@
-/**
- * Portfolio Website JavaScript
- * Organized using module pattern with utility functions and UI components
- */
 
 // Utility functions
 const Utils = {
@@ -65,12 +61,9 @@ const Utils = {
 
   handleError: function (message, error) {
     console.error(message, error);
-    // Optionally, display a user-friendly message
   },
 
-  // getRecaptchaSiteKey: function () {
-  //   return "6Ld7Sh4rAAAAAFjepNd5uzi6Y1ihcmJMepnNTUzA";
-  // },
+
 };
 
 // UI module
@@ -224,35 +217,65 @@ const UI = {
   
   initThemeToggle: function () {
     try {
-      const toggle = document.getElementById("theme-switch");
-      if (!toggle) return;
+      const toggleButton = document.getElementById("theme-switch");
+      if (!toggleButton) return;
   
       const body = document.body;
       const lightModeStyle = document.getElementById("light-mode-style");
       const savedTheme = localStorage.getItem("theme");
   
-      if (savedTheme === "light") {
-        // If saved light mode, enable light
-        body.classList.add("light-mode");
-        toggle.checked = true;
-        if (lightModeStyle) lightModeStyle.disabled = false;
-      } else {
-        // Else (no saved theme or saved dark), force dark mode
-        body.classList.remove("light-mode");
-        toggle.checked = false;
-        if (lightModeStyle) lightModeStyle.disabled = true;
+      function updateThemeUI() {
+        if (body.classList.contains("light-mode")) {
+          toggleButton.innerHTML = '<i class="fas fa-sun" aria-hidden="true"></i>';
+          toggleButton.classList.remove("glow-moon");
+          toggleButton.classList.add("glow-sun");
+        } else {
+          toggleButton.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
+          toggleButton.classList.remove("glow-sun");
+          toggleButton.classList.add("glow-moon");
+        }
       }
   
-      toggle.addEventListener("change", () => {
-        if (toggle.checked) {
-          body.classList.add("light-mode");
-          localStorage.setItem("theme", "light");
-          if (lightModeStyle) lightModeStyle.disabled = false;
-        } else {
-          body.classList.remove("light-mode");
-          localStorage.setItem("theme", "dark");
-          if (lightModeStyle) lightModeStyle.disabled = true;
-        }
+      // Set initial theme
+      if (savedTheme === "light") {
+        body.classList.add("light-mode");
+        if (lightModeStyle) lightModeStyle.disabled = false;
+      } else {
+        body.classList.remove("light-mode");
+        if (lightModeStyle) lightModeStyle.disabled = true;
+      }
+      updateThemeUI();
+  
+      // Disable double-click while animating
+      let isAnimating = false;
+  
+      toggleButton.addEventListener("click", () => {
+        if (isAnimating) return; // Prevent further clicks during animation
+  
+        isAnimating = true;  // Start animation process
+  
+        const icon = toggleButton.querySelector('i');
+        
+        // Add pop animation to the icon
+        icon.style.animation = "pop 0.35s cubic-bezier(0.4, 0, 0.2, 1)";
+  
+        // Reset animation after it completes
+        setTimeout(() => {
+          icon.style.animation = ""; // Reset animation
+          body.classList.toggle("light-mode");
+  
+          if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            if (lightModeStyle) lightModeStyle.disabled = false;
+          } else {
+            localStorage.setItem("theme", "dark");
+            if (lightModeStyle) lightModeStyle.disabled = true;
+          }
+  
+          updateThemeUI();
+  
+          isAnimating = false; // Re-enable clicking after animation completes
+        }, 350);  // Time for animation to complete before re-enabling click
       });
     } catch (error) {
       Utils.handleError("Error initializing theme toggle:", error);
@@ -260,6 +283,37 @@ const UI = {
   },
   
   
+  
+  
+  initMobileSidebar: function () {
+    try {
+      const sidebar = document.getElementById("mobileSidebar");
+      const overlay = document.getElementById("sidebarOverlay");
+      const menuToggle = document.getElementById("menuToggle");
+      function toggleSidebar() {
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+        menuToggle.classList.toggle("open");  // ⭐ Add 'open' class for animation
+        menuToggle.setAttribute("aria-expanded", sidebar.classList.contains("active"));
+      }
+      
+      function closeSidebar() {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+        menuToggle.classList.remove("open");  // ⭐ Remove 'open' class
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    
+      menuToggle.addEventListener("click", toggleSidebar);
+      overlay.addEventListener("click", closeSidebar);
+    
+      document.querySelectorAll(".mobile-sidebar a").forEach((link) => {
+        link.addEventListener("click", closeSidebar);
+      });
+    } catch (error) {
+      Utils.handleError("Error initializing mobile sidebar:", error);
+    }
+  },
 
   initTyped: function () {
     try {
@@ -289,37 +343,7 @@ const UI = {
     }
   },
 
-  initMobileSidebar: function () {
-    try {
-      const sidebar = document.getElementById("mobileSidebar");
-      const overlay = document.getElementById("sidebarOverlay");
-      const menuToggle = document.getElementById("menuToggle");
 
-      if (!sidebar || !overlay || !menuToggle) return;
-
-      menuToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("active");
-        overlay.classList.toggle("active");
-        menuToggle.setAttribute("aria-expanded", sidebar.classList.contains("active").toString());
-      });
-
-      overlay.addEventListener("click", () => {
-        sidebar.classList.remove("active");
-        overlay.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-
-      document.querySelectorAll(".mobile-sidebar a").forEach((link) => {
-        link.addEventListener("click", () => {
-          sidebar.classList.remove("active");
-          overlay.classList.remove("active");
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    } catch (error) {
-      Utils.handleError("Error initializing mobile sidebar:", error);
-    }
-  },
 
   initCopyrightYear: function () {
     try {
@@ -351,9 +375,6 @@ function showToast(message, type = "success") {
     }, 400);
   }, 4000);
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   UI.init(); // Initialize your full UI system

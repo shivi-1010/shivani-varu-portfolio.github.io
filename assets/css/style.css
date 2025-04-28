@@ -20,7 +20,7 @@
   --bg-light: #fafafa;
   --bg-light-card: #fff0f6;
 
-  
+
 
   /* Theme switching variables (default to dark theme) */
   --current-bg-primary: var(--bg-primary);
@@ -31,10 +31,8 @@
   --current-border-color: #444;
   --current-shadow: var(--shadow-sm);
 
-  /* Shadows */
-  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.2);
+ 
   /* Small shadow */
-
   --current-shadow: var(--shadow-sm);
 
   /* Spacing */
@@ -61,10 +59,7 @@
   --transition-fast: 0.3s ease;
   --transition-medium: 0.5s ease;
 
-  /* Media query breakpoints */
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 1000px;
-  --breakpoint-lg: 1200px;
+
 }
 
 
@@ -72,9 +67,6 @@
 
 
 /* ========== RESET ========== */
-
-
-
 
 * {
   margin: 0;
@@ -103,9 +95,7 @@ body {
   line-height: 24px;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-
 }
-
 h1,
 h2,
 h3,
@@ -113,9 +103,8 @@ h4,
 h5,
 h6 {
   font-family: 'Poppins', sans-serif;
-  /* font-weight: 600; You can adjust this weight as needed */
+  /* Font weight can be adjusted as needed */
 }
-
 
 .container {
   width: 100%;
@@ -124,27 +113,116 @@ h6 {
   padding: 0 var(--spacing-md);
 }
 
-body, 
-header, 
-footer, 
-section, 
-div, 
-p, 
-h1, h2, h3, h4, h5, h6, 
+body,
+header,
+footer,
+section,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 a {
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-.card, 
-.skills-card, 
-.experience-card, 
-.project, 
-.cert-card, 
-button, 
-input, 
-textarea {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+
+/* Smooth Bounce Animation */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
+
+/* Button and Icon Styles */
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: var(--current-text-primary);
+  transition: color 0.4s ease, transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.1);
+}
+
+/* Soft Glow for Moon and Sun */
+.theme-toggle button.glow-moon i {
+  color: #8ab4f8;
+  text-shadow: 0 0 4px #8ab4f8;
+}
+
+.theme-toggle button.glow-sun i {
+  color: #fdd835;
+  text-shadow: 0 0 4px #fdd835;
+}
+
+/* Apply Smooth Pop to the Icon */
+.theme-toggle button i {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+
+#mobileSidebar {
+  background: #191919;
+  color: #FDA5C8;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 40px 20px;
+  border-right: 2px solid #C73987;
+}
+
+#mobileSidebar ul li a {
+  color: #FDA5C8;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#mobileSidebar ul li a i {
+  color: #DC6E9F;
+  margin-right: 12px;
+  font-size: 18px;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#mobileSidebar ul li a:hover {
+  color: #E7007D; 
+  text-shadow: 0 0 6px rgba(231, 0, 125, 0.6);
+}
+
+#mobileSidebar ul li a:hover i {
+  transform: translateX(4px);
+  transition: transform 0.3s ease;
+}
+
+
+#sidebarOverlay {
+  background: rgba(4, 4, 4, 0.7);
+}
+
+#mobileSidebar .logo img {
+  filter: brightness(1.2) saturate(1.2);
+}
+
+
+
+
 
 
 /*---------------------------Header---------------------------*/
@@ -188,7 +266,7 @@ textarea {
 }
 
 .header-area {
-  padding: var(--spacing-sm) 0;
+  padding: 10px 0;
   transition: padding var(--transition-fast);
 }
 
@@ -198,9 +276,8 @@ textarea {
   left: 0;
   width: 100%;
   z-index: 99;
-  padding: var(--spacing-xs);
+  padding: 6px 0;
   background-color: rgba(25, 25, 25, 0.8);
-  /* Fallback for unsupported browsers */
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-pink);
 }
@@ -286,11 +363,13 @@ textarea {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 100vh;
+  min-height: calc(100vh - 80px); /* ✅ Important for no overflow */
+  margin-top: 80px; /* ✅ Push hero section down below navbar */
   text-align: left;
   gap: 60px;
-  padding: 0 20px;
+  padding: 60px 20px;
 }
+
 
 
 .FirstElement.adjusted-padding {
@@ -376,19 +455,6 @@ textarea {
   margin-left: 2px;
 }
 
-/* Blink animation
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
- */
-
-
-/* Paragraph refinement */
 .profile-text p {
   font-size: 1rem;
   line-height: 1.75;
@@ -409,7 +475,7 @@ textarea {
 
 /*--------------------------- Buttons ---------------------------*/
 
-/* Button container */
+
 .btn-group {
   display: flex;
   flex-wrap: wrap;
@@ -1814,134 +1880,6 @@ input[type="checkbox"]:checked::after {
 
 
 
-
-
-
-
-
-@media (max-width: 768px) {
-  .about-area {
-    padding-top: 100px;
-    padding-bottom: 60px;
-    align-items: flex-start;
-  }
-
-  .about-content {
-    padding: 0 15px;
-  }
-
-  .about-content h4 {
-    font-size: 32px;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .skills-three-columns {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .skill-bar span {
-    font-size: 14.5px;
-  }
-
-  .bar {
-    height: 8px;
-  }
-}
-
-/* Mobile responsive */
-@media screen and (max-width: 768px) {
-  .education-timeline {
-    border-left: 2px solid var(--smitten);
-    padding-left: 15px;
-  }
-
-  .education-entry {
-    padding-left: 20px;
-  }
-
-  .education-entry::before {
-    left: -12px;
-    top: 12px;
-    width: 14px;
-    height: 14px;
-  }
-
-  .education-entry .card {
-    padding: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .career-card-modern {
-    padding: 24px 16px;
-    border-radius: 14px;
-    box-shadow: 0 0 12px rgba(231, 0, 125, 0.2);
-  }
-
-  .career-heading {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
-
-  .career-heading h2 {
-    font-size: 1.8rem;
-    line-height: 1.3;
-    color: var(--mexican-pink);
-  }
-
-  .career-subtitle {
-    font-size: 0.9rem;
-    color: var(--china-pink);
-    line-height: 1.4;
-  }
-
-  .goal-text p {
-    font-size: 1rem;
-    line-height: 1.75;
-    padding: 0 4px;
-    text-align: justify;
-  }
-
-  .callout-box-modern {
-    margin-top: 24px;
-    font-size: 0.9rem;
-    padding: 12px 14px;
-    text-align: center;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .callout-box-modern i {
-    font-size: 20px;
-  }
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .contact-flex {
-    flex-direction: column;
-    gap: 40px;
-    align-items: stretch;
-  }
-
-  .form-consent {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .contact-form .submit {
-    max-width: 100%;
-  }
-}
-
-
 /* === Scroll Animations === */
 .reveal-fade {
   opacity: 0;
@@ -1983,154 +1921,8 @@ input[type="checkbox"]:checked::after {
 }
 
 
-/*================= Profile Text Resizing =================*/
-.skills-progress {
-  margin-top: var(--spacing-md);
-}
 
-.skill-bar {
-  margin-bottom: 12px;
-}
 
-.skill-bar span {
-  color: var(--carnation-pink);
-  font-weight: 500;
-}
-
-.bar {
-  background-color: #444;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 12px;
-  margin-top: var(--spacing-xs);
-}
-
-.fill {
-  height: 100%;
-  background-color: var(--smitten);
-  border-radius: 20px;
-}
-
-.language-icons p,
-.soft-skills p {
-  color: var(--china-pink);
-  font-size: 16px;
-  margin-top: var(--spacing-xs);
-}
-
-/* === Theme Toggle Switch === */
-.theme-toggle {
-  position: absolute;
-  right: var(--spacing-md);
-  top: 25px;
-  z-index: 1000;
-}
-
-.theme-toggle input[type="checkbox"] {
-  display: none;
-}
-
-.theme-toggle label {
-  font-size: 20px;
-  color: var(--smitten);
-  cursor: pointer;
-  transition: color var(--transition-fast);
-}
-
-/* === Header Logo Mobile Handling === */
-.header .logo {
-  display: none;
-}
-
-/* === Overlay & Sidebar === */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1500;
-  display: none;
-}
-
-.overlay.active {
-  display: block;
-}
-
-/* === Mobile Sidebar === */
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 240px;
-  height: 100vh;
-  background: rgba(25, 25, 25, 0.95);
-  backdrop-filter: blur(6px);
-  z-index: 2000;
-  transition: left var(--transition-fast);
-  padding-top: 70px;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
-  will-change: left;
-}
-
-.mobile-sidebar.active {
-  left: 0;
-}
-
-.mobile-sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.mobile-sidebar ul li {
-  padding: 15px 25px;
-  border-bottom: 1px solid #444;
-}
-
-.mobile-sidebar ul li a {
-  color: var(--carnation-pink);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  transition: var(--transition-fast);
-}
-
-.mobile-sidebar ul li a:hover {
-  color: var(--mexican-pink);
-}
-
-.mobile-sidebar ul li i {
-  margin-right: var(--spacing-sm);
-  color: var(--china-pink);
-}
-
-.mobile-sidebar .signature {
-  width: 100px;
-  height: 100px;
-}
-
-.mobile-sidebar .logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-sidebar .logo img {
-  max-width: 50%;
-  height: auto;
-}
-
-/* === Menu Icon (Hamburger) === */
-.menu_icon {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  z-index: 3000;
-  font-size: 24px;
-  color: var(--carnation-pink);
-  cursor: pointer;
-  transition: transform var(--transition-fast);
-}
-
-/* === Neon Text Styling (Dark Mode) === */
 .neon-text {
   font-size: 1.2rem;
   font-weight: 400;
@@ -2143,13 +1935,11 @@ input[type="checkbox"]:checked::after {
 
 
 
-/* === Profile Photo Pulse Animation === */
 .FirstElement .profile-photo {
   animation: glowPulse 3s ease-in-out infinite;
   will-change: box-shadow;
 }
 
-/* === Desktop Logo Display === */
 .desktop-logo {
   display: flex !important;
   align-items: center;
@@ -2157,7 +1947,6 @@ input[type="checkbox"]:checked::after {
 
 
 
-/* === Pulse Animation (Dark Mode Inspired) === */
 @keyframes glowPulse {
   0% {
     box-shadow: 0 0 8px #E7007D, 0 0 16px rgba(231, 0, 125, 0.5);
@@ -2273,288 +2062,110 @@ input[type="checkbox"]:checked::after {
   padding-right: var(--spacing-xl);
 }
 
-/*================= Responsive Design - Small Screens =================*/
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 0 15px;
-  }
+/* ---------------- Mobile Sidebar Modern UI ---------------- */
 
-  .hero-wrapper,
-  .FirstElement,
-  .about {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: auto;
-    padding: 60px 20px;
-    gap: 40px;
-  }
-
-  .profile-photo {
-    margin-bottom: var(--spacing-md);
-    width: 250px;
-    height: 250px;
-    border-radius: var(--radius-circle);
-    overflow: hidden;
-    border: 5px solid var(--smitten);
-    box-shadow: 0 0 15px rgba(231, 0, 125, 0.6);
-  }
-
-
-  .profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease-in-out;
-    border-radius: var(--radius-circle);
-  }
-
-
-  .profile-text {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 var(--spacing-md);
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-text h1 {
-    font-size: 2.2rem;
-    line-height: 1.3;
-    margin-bottom: var(--spacing-sm);
-    color: var(--smitten);
-  }
-
-  .profile-text h3 {
-    font-size: 1.5rem;
-    margin-top: var(--spacing-xs);
-    margin-bottom: var(--spacing-md);
-    color: var(--china-pink);
-  }
-
-  .profile-text p {
-    padding: 0 var(--spacing-sm);
-    text-align: justify;
-    color: var(--carnation-pink);
-  }
-
-  .header .menu_icon {
-    display: block;
-  }
-
-  .header i {
-    color: var(--mexican-pink);
-  }
-
-  .about-skills h4 {
-    color: var(--smitten);
-    font-size: 40px;
-    line-height: 70px;
-    text-transform: capitalize;
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-  }
-
-  .education-content .row {
-    flex-direction: column;
-    margin-bottom: 50px;
-  }
-
-  .education-content .row .education,
-  .education-content .row .internship {
-    flex-basis: 100%;
-    max-width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .education-content .timeline {
-    padding: var(--spacing-md);
-  }
-
-  .education-content .title {
-    text-align: center;
-    color: var(--smitten);
-  }
-
-  .project {
-    flex-basis: 100%;
-    margin-bottom: 30px;
-  }
-
-  .skills-language-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .skills-card {
-    flex: 1 1 100%;
-    max-width: 400px;
-    width: 90%;
-    margin: 0 auto;
-    text-align: left;
-  }
-
-  .education-row {
-    flex-direction: column;
-  }
-
-  .education-column,
-  .education-sidecard {
-    flex: 1 1 100%;
-  }
-
-  /* Header mobile adjustments */
-  .header {
-    grid-template-columns: 1fr auto;
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  .header ul {
-    display: none;
-    /* This takes precedence */
-  }
-
-  .header .navbar {
-    display: none;
-  }
-
-  .navbar {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .header .logo {
-    display: block;
-    margin-top: var(--spacing-sm);
-    text-align: center;
-  }
-
-  .desktop-logo {
-    display: none !important;
-  }
-}
-
-/*================= Responsive Design - Tablets =================*/
-@media only screen and (min-width: 768px) and (max-width: 999px) {
-  .container {
-    width: 750px;
-  }
-}
-
-/*================= Responsive Design - Medium to Large =================*/
-@media only screen and (min-width: 1000px) and (max-width: 1200px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (hover: none) {
-  .FirstElement .profile-photo img {
-    transform: scale(1.05);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  ::before,
-  ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .FirstElement .profile-photo,
-  .btn.cta,
-  body.light-mode .btn.cta,
-  body.light-mode .project-buttons .btn.cta,
-  body.light-mode .cert-card .btn.cta {
-    animation: none !important;
-    box-shadow: none !important;
-  }
-
-  .FirstElement .profile-photo {
-    box-shadow: 0 0 10px var(--smitten) !important;
-  }
-
-  .btn.cta,
-  body.light-mode .btn.cta {
-    box-shadow: 0 0 8px var(--smitten) !important;
-  }
-}
-
-@media print {
-  body {
-    background-color: white !important;
-    color: black !important;
-  }
-
-  .header-area.sticky,
-  .footer,
-  .btn-group,
-  .theme-toggle,
-  .menu_icon {
-    display: none !important;
-  }
-
-  .container {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  .FirstElement .profile-photo {
-    box-shadow: none !important;
-    border: 1px solid #ccc !important;
-    animation: none !important;
-  }
-
-  a {
-    color: black !important;
-    text-decoration: underline !important;
-  }
-
-  .profile-text h1,
-  .section-title h4,
-  .project-title h4,
-  .about-content h4,
-  .education-content .title,
-  .contact-title h4 {
-    color: black !important;
-  }
-
-  .cert-card,
-  .project,
-  .skills-card,
-  .education-sidecard {
-    break-inside: avoid;
-    page-break-inside: avoid;
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
-  }
-}
-
-.fade-in {
+/* Mobile Sidebar hidden by default */
+#sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.2s ease-out forwards;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 9998;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* When overlay is active */
+#sidebarOverlay.active {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* .linkedin-badge {
-  margin-top: 40px;
+/* Sidebar Panel */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95); /* Light semi-transparent white */
+  backdrop-filter: blur(12px);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%); /* Hidden by default */
+  transition: transform 0.4s ease;
+  z-index: 9999;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* When Sidebar is Active */
+.mobile-sidebar.active {
+  transform: translateX(0);
+}
+
+/* Sidebar Logo */
+.mobile-sidebar .logo {
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
-} */
+  align-items: center;
+}
+
+/* Sidebar Menu Items */
+.mobile-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Sidebar Menu Links */
+.mobile-sidebar ul li a {
+  color: #222;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Sidebar Link Hover */
+.mobile-sidebar ul li a:hover {
+  color: #C73987; /* Pink hover */
+  transform: translateX(6px);
+}
+
+/* ---------------- Hamburger Menu Button ---------------- */
+.menu_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: none;
+  border: none;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+.menu_icon i {
+  font-size: 24px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* When menu is open - rotate bars */
+.menu_icon.open i {
+  transform: rotate(90deg);
+}
