@@ -173,16 +173,19 @@ a {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }
 
-
 #mobileSidebar {
-  background: #191919;
+  background: linear-gradient(145deg, #191919, #040404); /* 🎯 Add smooth gradient */
   color: #FDA5C8;
   width: 80%;
   max-width: 320px;
   height: 100vh;
   overflow-y: auto;
-  padding: 40px 20px;
-  border-right: 2px solid #C73987;
+  padding: 40px 24px 30px 24px; /* More breathing space */
+  border-right: none; /* ❌ Remove ugly hard border */
+  box-shadow: 4px 0 20px rgba(231, 0, 125, 0.25); /* ✅ soft pinkish side shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 #mobileSidebar ul li a {
@@ -190,36 +193,43 @@ a {
   font-weight: 600;
   display: flex;
   align-items: center;
-  padding: 12px 0;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  padding: 14px 0;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
 }
 
 #mobileSidebar ul li a i {
   color: #DC6E9F;
-  margin-right: 12px;
-  font-size: 18px;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+  margin-right: 14px;
+  font-size: 20px;
+  transition: all 0.3s ease;
 }
 
 #mobileSidebar ul li a:hover {
-  color: #E7007D; 
+  color: #E7007D;
   text-shadow: 0 0 6px rgba(231, 0, 125, 0.6);
+  transform: translateX(4px);
 }
 
 #mobileSidebar ul li a:hover i {
+  color: #E7007D;
   transform: translateX(4px);
-  transition: transform 0.3s ease;
 }
 
-
+/* Sidebar overlay dark glass */
 #sidebarOverlay {
-  background: rgba(4, 4, 4, 0.7);
+  background: rgba(4, 4, 4, 0.5);
+  backdrop-filter: blur(4px); /* 🎯 nice glass blur effect */
 }
 
+/* Logo */
 #mobileSidebar .logo img {
-  filter: brightness(1.2) saturate(1.2);
+  filter: brightness(1.4) saturate(1.4); /* Brighter slightly */
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto 30px auto;
+  display: block;
 }
-
 
 
 
