@@ -1,0 +1,511 @@
+/* ========== MEDIA QUERIES ========== */
+
+/* Large Desktop (1920×1080) */
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .FirstElement {
+    gap: 80px;
+  }
+  
+  .profile-text h1 {
+    font-size: 3.8rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 1.6rem;
+  }
+  
+  .FirstElement .profile-photo {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* Medium Desktop (1536×864) */
+@media screen and (max-width: 1599px) and (min-width: 1400px) {
+  .container {
+    max-width: 1300px;
+  }
+  
+  .FirstElement {
+    gap: 70px;
+  }
+}
+
+/* Small Desktop (1366×768) */
+@media screen and (max-width: 1399px) and (min-width: 1024px) {
+  .container {
+    max-width: 1100px;
+  }
+  
+  .FirstElement {
+    gap: 50px;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablet Landscape (1024×768) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    max-width: 900px;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Header adjustments */
+  .header ul li {
+    margin: 0 10px;
+  }
+  
+  .header ul li a {
+    font-size: 14px;
+  }
+  
+  /* Hero section */
+  .FirstElement {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  
+  .profile-text {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .profile-text p {
+    text-align: center;
+  }
+  
+  /* Skills section */
+  .skills-three-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Projects section */
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Contact section */
+  .contact-flex {
+    gap: 40px;
+  }
+}
+
+/* Tablet Portrait (768×1024, 810×1080, 820×1180) */
+@media screen and (max-width: 820px) {
+  /* Header */
+  .header .navbar {
+    display: none;
+  }
+  
+  .header .menu_icon {
+    display: block;
+  }
+  
+  /* Hero section */
+  .FirstElement {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 15px;
+    margin-top: 60px;
+  }
+  
+  .profile-text {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-text h1 {
+    font-size: 2.2rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  .profile-text p {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .FirstElement .profile-photo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  /* About section */
+  .about-content h4 {
+    font-size: 32px;
+  }
+  
+  /* Skills section */
+  .skills-three-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .section-title.center h4 {
+    font-size: 32px;
+  }
+  
+  /* Projects section */
+  .projects {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  /* Education section */
+  .education-timeline {
+    max-width: 100%;
+    padding-left: 20px;
+  }
+  
+  /* Experience section */
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Contact section */
+  .contact-flex {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .contact-form, .contact-info {
+    flex: 1 1 100%;
+  }
+}
+
+/* Mobile (360×800, 390×844, 393×873) */
+@media screen and (max-width: 480px) {
+  /* Container */
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  /* Header */
+  .logo img {
+    max-width: 100px;
+  }
+  
+  /* Hero section */
+  .FirstElement {
+    padding: 20px 10px;
+    margin-top: 50px;
+  }
+  
+  .profile-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 1rem;
+  }
+  
+  #typed-role {
+    font-size: 1rem;
+  }
+  
+  .profile-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  .FirstElement .profile-photo {
+    width: 200px;
+    height: 200px;
+    border-width: 4px;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    min-width: unset;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* About section */
+  .about-area {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+  
+  .about-content {
+    padding: 0 10px;
+  }
+  
+  .about-content h4 {
+    font-size: 28px;
+  }
+  
+  .about-content p, .about-content ul li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* Skills section */
+  .section-title.center h4 {
+    font-size: 28px;
+    padding-top: 30px;
+  }
+  
+  .skills-column, .skills-card {
+    padding: 20px 15px;
+  }
+  
+  /* Education section */
+  .education .heading {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .education-entry .card {
+    padding: 20px;
+  }
+  
+  .education-entry h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Experience section */
+  .experience .heading {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .experience-card {
+    padding: 20px;
+  }
+  
+  /* Project section */
+  .project-title h4 {
+    font-size: 28px;
+  }
+  
+  .project {
+    min-height: 320px;
+  }
+  
+  /* Certificates section */
+  .section-title h4 {
+    font-size: 28px;
+  }
+  
+  .cert-grid {
+    gap: 20px;
+  }
+  
+  .cert-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Career goals section */
+  .career-heading h2 {
+    font-size: 2rem;
+  }
+  
+  .career-card-modern {
+    padding: 30px 20px;
+  }
+  
+  .goal-text {
+    font-size: 1rem;
+  }
+  
+  /* Contact section */
+  .contact-title h4 {
+    font-size: 28px;
+  }
+  
+  .contact-form input, .contact-form textarea {
+    padding: 12px 15px;
+  }
+  
+  /* Footer */
+  .footer-socials {
+    gap: var(--spacing-sm);
+  }
+  
+  .footer-socials a {
+    font-size: 20px;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 359px) {
+  .FirstElement .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .profile-text h1 {
+    font-size: 1.6rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 0.9rem;
+  }
+  
+  .section-title.center h4,
+  .about-content h4,
+  .education .heading,
+  .experience .heading,
+  .project-title h4,
+  .contact-title h4 {
+    font-size: 24px;
+  }
+  
+  .mobile-sidebar {
+    width: 260px;
+  }
+}
+
+
+@media screen and (max-width: 820px) {
+  .header .menu_icon {
+    display: block;
+  }
+
+  .header .navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-wrapper .profile-photo {
+    order: -1;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .hero-wrapper .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-wrapper .profile-text {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .FirstElement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 15px;
+    margin-top: 60px;
+  }
+
+  .FirstElement .profile-photo {
+    order: -1; /* photo goes on top */
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .FirstElement .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .FirstElement .profile-text {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .profile-text h5 {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+  .profile-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .profile-text h3,
+  #typed-role {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .profile-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+

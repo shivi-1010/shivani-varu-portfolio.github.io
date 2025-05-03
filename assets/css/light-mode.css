@@ -62,11 +62,6 @@
   --transition-fast: 0.3s ease;
   --transition-medium: 0.5s ease;
   
-  /* Media query breakpoints */
-  --breakpoint-sm: 768px;
-  --breakpoint-md: 1000px;
-  --breakpoint-lg: 1200px;
-
 }
 
 
@@ -1920,4 +1915,107 @@ body.light-mode .footer-text p:last-child {
     justify-content: space-between;
     align-items: center;
   }
+}
+
+
+/* Sidebar Panel - Light Mode */
+body.light-mode .mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(145deg, #ffffff, #fce6f1); /* soft white-pink gradient */
+  backdrop-filter: blur(12px);
+  box-shadow: 4px 0 20px rgba(231, 0, 125, 0.2); /* soft pink shadow */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 9999;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Sidebar active state */
+body.light-mode .mobile-sidebar.active {
+  transform: translateX(0);
+  animation: slideIn 0.4s cubic-bezier(0.25, 1.25, 0.5, 1);
+}
+
+/* Sidebar Logo */
+body.light-mode .mobile-sidebar .logo img {
+  max-width: 140px;
+  height: auto;
+  filter: brightness(1.1); /* slightly brighter in light mode */
+}
+
+/* Sidebar Menu */
+body.light-mode .mobile-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Sidebar Menu Links */
+body.light-mode .mobile-sidebar ul li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c73987; /* smitten pink text */
+  border-radius: 12px;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active Item */
+body.light-mode .mobile-sidebar ul li a.active {
+  background: rgba(199, 57, 135, 0.1); /* light pink highlight */
+  border-left: 4px solid #e7007d; /* stronger pink accent */
+  color: #e7007d;
+  padding-left: 14px;
+}
+
+/* Icon inside links */
+body.light-mode .mobile-sidebar ul li a i {
+  font-size: 24px;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* Hover effect */
+body.light-mode .mobile-sidebar ul li a:hover {
+  background: rgba(199, 57, 135, 0.08); /* subtle pink hover */
+  color: #e7007d;
+  transform: translateX(4px);
+}
+
+/* Hamburger Button */
+body.light-mode .menu_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+body.light-mode .menu_icon i {
+  font-size: 26px;
+  color: #c73987; /* smitten pink icon */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* When menu is open - rotate */
+body.light-mode .menu_icon.open i {
+  transform: rotate(90deg);
+  color: #e7007d; /* brighter pink when open */
 }
