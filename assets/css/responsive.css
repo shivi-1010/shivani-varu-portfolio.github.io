@@ -671,6 +671,24 @@
   body.light-mode .footer {
     padding: 30px 15px;
   }
+
+  body.light-mode .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  body.light-mode .menu_icon {
+    order: 1;
+    margin-right: auto;
+  }
+
+  body.light-mode .theme-toggle {
+    order: 2;
+    margin-left: auto;
+  }
+
+
 }
 
 
