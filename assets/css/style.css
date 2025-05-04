@@ -70,11 +70,26 @@
 
 /* ========== RESET ========== */
 
-* {
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -89,59 +104,33 @@ ul {
 
 img {
   max-width: 100%;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  line-height: 24px;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Poppins', sans-serif;
+  height: auto;
+  display: block;
 }
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
 
-body,
-header,
-footer,
-section,
-div,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a {
+body, header, footer, section, div, p, h1, h2, h3, h4, h5, h6, a, button, input, textarea {
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
+/* Profile glow */
 .FirstElement .profile-photo {
   animation: glowPulse 3s ease-in-out infinite;
   will-change: box-shadow;
 }
 
+/* Desktop logo */
 .desktop-logo {
   display: flex !important;
   align-items: center;
 }
-
-
 
 /* Button and Icon Styles */
 .theme-toggle button {
@@ -168,7 +157,6 @@ a {
   text-shadow: 0 0 4px #fdd835;
 }
 
-/* Apply Smooth Pop to the Icon */
 .theme-toggle button i {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
 }

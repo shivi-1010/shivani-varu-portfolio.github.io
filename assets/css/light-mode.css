@@ -198,12 +198,31 @@ textarea {
 }
 
 /* ========== RESET (Light Mode) ========== */
+/* ========== RESET (Light Mode) ========== */
 
-body.light-mode * {
+body.light-mode html {
+  scroll-behavior: smooth;
+}
+
+body.light-mode,
+body.light-mode html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+}
+
+body.light-mode *,
+body.light-mode *::before,
+body.light-mode *::after {
+  box-sizing: inherit;
+}
+
+body.light-mode {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: var(--light-bg-primary);
+  color: var(--light-text-primary);
 }
 
 body.light-mode a {
@@ -218,14 +237,8 @@ body.light-mode ul {
 
 body.light-mode img {
   max-width: 100%;
-}
-
-body.light-mode body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: var(--light-bg-primary);
-  color: var(--light-text-primary);
+  height: auto;
+  display: block;
 }
 
 body.light-mode h1,
@@ -235,15 +248,17 @@ body.light-mode h4,
 body.light-mode h5,
 body.light-mode h6 {
   font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
-.light-mode .container {
+body.light-mode .container {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
 }
-
 
 
 /*--------------------------- Header (Light Mode) ---------------------------*/
