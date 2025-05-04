@@ -1248,9 +1248,13 @@ padding-bottom: 45px;
 .cert-card img {
   width: 100px;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
   transition: transform var(--transition-fast);
 }
+
 
 .cert-card:hover img {
   transform: scale(1.05);
