@@ -933,3 +933,32 @@
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
+
+@media (max-width: 992px) {
+
+  body.light-mode .header-area .header nav,
+  body.light-mode .header-area .header .navbar,
+  body.light-mode .desktop-logo {
+    display: none;
+  }
+
+  body.light-mode .menu_icon {
+    display: block !important;
+    font-size: 26px;
+    color: var(--light-text-primary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: 9999;
+  }
+
+  body.light-mode .header-area {
+    padding: 12px 20px;
+  }
+
+  body.light-mode .header-area .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

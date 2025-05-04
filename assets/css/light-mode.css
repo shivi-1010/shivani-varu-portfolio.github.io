@@ -1,231 +1,193 @@
 :root {
   /* Color palette */
-  --smitten: #C73987;
-  --china-pink: #DC6E9F;
-  --carnation-pink: #FDA5C8;
-  --light-bg-primary: #ffffff;
-  --light-bg-secondary: #fef4f8; /* A very soft pink */
-  --light-bg-card: #fff0f6;
-  --mexican-pink: #E7007D;
-  --rich-black: #040404;
-  
-  /* Text colors */
-  --light-text-primary: #222;
-  --light-text-secondary: #555;
-  --light-text-muted: #888;
-  
+  --color-smitten: #C73987;
+  --color-china-pink: #DC6E9F;
+  --color-carnation-pink: #FDA5C8;
+  --color-mexican-pink: #E7007D;
+  --color-rich-black: #040404;
+
   /* Background colors */
-  --bg-light: #fafafa;
+  --bg-light-primary: #ffffff;
+  --bg-light-secondary: #fef4f8; /* A very soft pink */
   --bg-light-card: #fff0f6;
-  
-  /* Theme switching variables (default to light theme) */
-  --current-bg-primary: var(--light-bg-primary);
-  --current-bg-secondary: var(--light-bg-secondary);
-  --current-bg-card: var(--light-bg-card);
-  --current-text-primary: var(--light-text-primary);
-  --current-text-secondary: var(--light-text-secondary);
-  --current-border-color: #f0a0c2;
-  --current-shadow: var(--light-shadow-soft);
-  
+  --bg-light-alt: #fafafa;
+
+  /* Text colors */
+  --text-light-primary: #1a1a1a; /* Darker for clarity */
+  --text-light-secondary: #444444; /* More contrast */
+  --text-light-muted: #6b6b6b; /* Slightly stronger */
+
+  /* Border colors */
+  --border-light-soft: #efb9cf; /* More visible soft pink */
+  --border-light-medium: #e08fb2; /* Balanced pastel for accents */
+  --border-light-strong: #c73987; /* High contrast pink */
+  --border-light-default: #f0a0c2;
+
+  /* Badge colors */
+  --badge-light-bg: #f8d7e5; /* a soft pink or pastel tone */
+  --badge-light-text: #a32660; /* Tags text (visible on pink) */
+
   /* Shadows */
-  --light-shadow-soft: 0 4px 12px rgba(231, 0, 125, 0.1);
-  --light-shadow-medium: 0 6px 20px rgba(231, 0, 125, 0.2);
+  --shadow-light-soft: 0 4px 12px rgba(231, 0, 125, 0.1);
+  --shadow-light-medium: 0 6px 20px rgba(231, 0, 125, 0.2);
 
-  --light-border-light: #f2c2d6;       /* Soft pink border */
-  --light-border-medium: #ea9ec0;      /* Medium border for highlights */
-  --light-border-strong: #dc6e9f;  
-
-  --light-text-primary: #1a1a1a;            /* Darker for clarity */
-  --light-text-secondary: #444444;         /* More contrast */
-  --light-text-muted: #6b6b6b;             /* Slightly stronger */
-
-  --light-border-light: #efb9cf;           /* More visible soft pink */
-  --light-border-medium: #e08fb2;          /* Balanced pastel for accents */
-  --light-border-strong: #c73987;          /* High contrast pink */
-
-  --badge-bg-light: #fdd6e8;               /* Tags background */
-  --badge-text: #a32660;                   /* Tags text (visible on pink) */
-  
   /* Spacing */
   --spacing-xs: 5px;
   --spacing-md: 20px;
   --spacing-lg: 40px;
   --spacing-xl: 80px;
-  
+
   /* Border radius */
   --radius-sm: 5px;
   --radius-md: 10px;
   --radius-lg: 20px;
   --radius-circle: 50%;
-  
+
   /* Transitions */
   --transition-fast: 0.3s ease;
   --transition-medium: 0.5s ease;
-  
+
+  /* Theme switching variables (default to light theme) */
+  --current-bg-primary: var(--bg-light-primary);
+  --current-bg-secondary: var(--bg-light-secondary);
+  --current-bg-card: var(--bg-light-card);
+  --current-text-primary: var(--text-light-primary);
+  --current-text-secondary: var(--text-light-secondary);
+  --current-text-muted: var(--text-light-muted);
+  --current-border-color: var(--border-light-default);
+  --current-shadow: var(--shadow-light-soft);
 }
 
-
-body, 
-header, 
-footer, 
-section, 
-div, 
-p, 
-h1, h2, h3, h4, h5, h6, 
+/* Global transitions */
+body,
+header,
+footer,
+section,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 a {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.card, 
-.skills-card, 
-.experience-card, 
-.project, 
-.cert-card, 
-button, 
-input, 
+.card,
+.skills-card,
+.experience-card,
+.project,
+.cert-card,
+button,
+input,
 textarea {
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
-
 
 /*--------------------------- Light Mode Base ---------------------------*/
 
-/* Light Mode Color Variables */
-body.light-mode {
-    --current-bg-primary: #ffffff; /* Main white background */
-    --current-bg-secondary: #fce6f1; /* Soft pink background */
-    --current-bg-card: #fff0f6; /* Very light pink cards */
+.light-mode {
+  --current-bg-primary: var(--bg-light-primary);
+  --current-bg-secondary: #fce6f1;
+  --current-bg-card: var(--bg-light-card);
+  --current-text-primary: var(--text-light-primary);
+  --current-text-secondary: var(--text-light-secondary);
+  --current-text-muted: var(--text-light-muted);
+  --current-border-color: var(--border-light-default);
+  --current-shadow: var(--shadow-light-soft);
   
-    --current-text-primary: #222; /* Dark gray text */
-    --current-text-secondary: #555; /* Slightly lighter gray */
-    --current-text-muted: #888; /* Muted gray for placeholders */
-    
-    --current-border-color: #f0a0c2; /* Light pink border (China Pink) */
-    --current-shadow: 0 4px 12px rgba(231, 0, 125, 0.1); /* Soft pink shadow */
-  }
-  
-  /* Apply Light Mode Background and Text to Body */
-  body.light-mode {
-    background-color: var(--current-bg-primary);
-    color: var(--current-text-primary);
-  }
-  
-  /* Container General Setup */
-  body.light-mode .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* Headings - Light Mode */
-  body.light-mode h1,
-  body.light-mode h2,
-  body.light-mode h3,
-  body.light-mode h4,
-  body.light-mode h5,
-  body.light-mode h6 {
-    color: var(--smitten); /* #C73987 */
-  }
-  
-  /* Paragraphs and Normal Text */
-  body.light-mode p {
-    color: var(--current-text-secondary);
-  }
-  
-  /* Links */
-  body.light-mode a {
-    color: var(--smitten);
-    transition: color 0.3s ease;
-  }
-  
-  body.light-mode a:hover {
-    color: var(--mexican-pink); /* Brighter hover */
-  }
-  
-  /* Buttons */
-  body.light-mode .btn {
-    background: var(--smitten);
-    color: white;
-    border-radius: 30px;
-    padding: 12px 28px;
-    font-weight: 600;
-    border: none;
-    transition: background 0.3s ease;
-  }
-  
-  body.light-mode .btn:hover {
-    background: var(--mexican-pink);
-  }
-  
-  /* Cards General */
-  body.light-mode .card,
-  body.light-mode .skills-card,
-  body.light-mode .experience-card,
-  body.light-mode .project,
-  body.light-mode .cert-card {
-    background: var(--current-bg-card);
-    color: var(--current-text-primary);
-    box-shadow: var(--current-shadow);
-    border-radius: 12px;
-    border: 1px solid var(--current-border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  /* Inputs and Form Elements */
-  body.light-mode input,
-  body.light-mode textarea {
-    background: #fff;
-    color: var(--current-text-primary);
-    border: 1px solid var(--current-border-color);
-    padding: 12px 16px;
-    border-radius: 8px;
-  }
-  
-  body.light-mode input::placeholder,
-  body.light-mode textarea::placeholder {
-    color: var(--current-text-muted);
-  }
-  
-  /* Section Titles */
-  body.light-mode .section-title h4 {
-    color: var(--smitten);
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  /* Borders and Dividers */
-  body.light-mode hr {
-    border-color: var(--current-border-color);
-  }
-  
-  /* Footer */
-  body.light-mode .footer {
-    background-color: var(--light-bg-primary);
-    color: var(--light-text-secondary);
-    padding: var(--spacing-lg) var(--spacing-md);
-    text-align: center;
-    box-shadow: 0 -2px 25px var(--light-shadow-soft);
+  background-color: var(--current-bg-primary);
+  color: var(--current-text-primary);
 }
 
-  
-  body.light-mode .footer strong {
-    color: var(--mexican-pink);
-  }
-  
-  /* Sidebar */
-  body.light-mode .mobile-sidebar {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  body.light-mode .mobile-sidebar ul li a {
-    padding: 12px 16px;
-    font-size: 1.1rem;
-  }
-  body.light-mode .mobile-sidebar ul li a:hover {
-    color: var(--smitten);
-  }
-  
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode h5,
+.light-mode h6 {
+  color: var(--color-smitten);
+}
+
+.light-mode p {
+  color: var(--current-text-secondary);
+}
+
+.light-mode a {
+  color: var(--color-smitten);
+  transition: color var(--transition-fast);
+}
+
+.light-mode a:hover {
+  color: var(--color-mexican-pink);
+}
+
+.light-mode .btn {
+  background: var(--color-smitten);
+  color: white;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 600;
+  border: none;
+  transition: background var(--transition-fast);
+}
+
+.light-mode .btn:hover {
+  background: var(--color-mexican-pink);
+}
+
+.light-mode .card,
+.light-mode .skills-card,
+.light-mode .experience-card,
+.light-mode .project,
+.light-mode .cert-card {
+  background: var(--current-bg-card);
+  color: var(--current-text-primary);
+  box-shadow: var(--current-shadow);
+  border-radius: 12px;
+  border: 1px solid var(--current-border-color);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.light-mode input,
+.light-mode textarea {
+  background: #fff;
+  color: var(--current-text-primary);
+  border: 1px solid var(--current-border-color);
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: var(--current-text-muted);
+}
+
+.light-mode .section-title h4 {
+  color: var(--color-smitten);
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.light-mode hr {
+  border-color: var(--current-border-color);
+}
+
+.light-mode .footer {
+  background-color: var(--bg-light-primary);
+  color: var(--text-light-secondary);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  box-shadow: 0 -2px 25px var(--shadow-light-soft);
+}
+
+.light-mode .footer strong {
+  color: var(--color-mexican-pink);
+}
+
 /* ========== RESET (Light Mode) ========== */
 
 body.light-mode * {
@@ -264,16 +226,15 @@ body.light-mode h4,
 body.light-mode h5,
 body.light-mode h6 {
   font-family: 'Poppins', sans-serif;
-  /* font-weight: 600; */
 }
 
-/* Container */
-body.light-mode .container {
+.light-mode .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
+
 
 
 /*--------------------------- Header (Light Mode) ---------------------------*/
@@ -316,7 +277,7 @@ body.light-mode .signature {
 }
 
 body.light-mode .header-area {
-  padding: var(--spacing-sm) 0;
+  padding: 10px 0;
   transition: padding var(--transition-fast);
   background-color: var(--light-bg-primary);
 }
@@ -413,10 +374,10 @@ body.light-mode .FirstElement {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 100vh;
+  min-height: calc(100vh - 80px);
   text-align: left;
   gap: 60px;
-  padding: 0 20px;
+  padding: 60px 20px;
 }
 
 body.light-mode .FirstElement.adjusted-padding {
@@ -424,16 +385,16 @@ body.light-mode .FirstElement.adjusted-padding {
 }
 
 body.light-mode .FirstElement .profile-photo {
-  width: 300px;
-  height: 300px;
   border-radius: var(--radius-circle);
-  overflow: hidden;
   border: 6px solid var(--light-smitten);
   box-shadow:
     0 0 6px rgba(231, 0, 125, 0.4),
     0 0 12px rgba(231, 0, 125, 0.2);
   transition: transform var(--transition-fast);
   will-change: transform, box-shadow;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
 }
 
 body.light-mode .FirstElement .profile-photo img {
@@ -464,6 +425,7 @@ body.light-mode .profile-text h5 {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding-bottom: 40px;
 }
 
 body.light-mode .profile-text h1 {
@@ -472,20 +434,21 @@ body.light-mode .profile-text h1 {
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
+  padding-top: 0px;
 }
 
 body.light-mode .profile-text h3 {
-  font-size: 1.4rem;
   color: var(--light-carnation-pink);
+  font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 4px;
 }
 
 body.light-mode #typed-role {
+  color: var(--smitten);
   display: inline-block;
   min-height: 24px;
   font-weight: 600;
-  color: var(--smitten);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -494,14 +457,12 @@ body.light-mode #typed-role {
 
 }
 
-
-/* Paragraph refinement */
 body.light-mode .profile-text p {
+  color: var(--current-text-primary);
   font-size: 1rem;
   line-height: 1.75;
   max-width: 640px;
-  color: var(--current-text-primary);
-    text-align: justify;
+  text-align: justify;
   margin-top: 12px;
   margin-bottom: 28px;
 }
@@ -511,7 +472,7 @@ body.light-mode .profile-text .btn-group {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  margin-top: 10px;
+  padding-bottom: 45px;
 }
 
 /*--------------------------- Buttons (Light Mode) ---------------------------*/
@@ -541,26 +502,24 @@ body.light-mode .btn {
   box-shadow: 0 6px 12px rgba(231, 0, 125, 0.15);
 }
 
-/* Primary Button (CTA) */
 body.light-mode .btn.cta {
-  background-color: #C73987; /* Using direct hex value for smitten pink */
-  color: #ffffff; /* Pure white for maximum contrast */
+  background-color: #C73987;
+  color: #ffffff;
   border: none;
   box-shadow: 0 4px 10px rgba(199, 57, 135, 0.3);
 }
 
 body.light-mode .btn.cta:hover {
-  background-color: #E7007D; /* Mexican pink for hover - slightly brighter */
+  background-color: #E7007D;
   color: #ffffff;
-  border: none; /* Remove border to avoid size change on hover */
+  border: none;
   box-shadow: 0 6px 15px rgba(231, 0, 125, 0.4);
   transform: translateY(-2px);
 }
 
-/* Secondary Button (Outlined) */
 body.light-mode .btn.secondary {
   background-color: transparent;
-  color: #C73987; /* Direct hex for smitten pink */
+  color: #C73987;
   border: 2px solid #C73987;
   box-shadow: 0 3px 8px rgba(199, 57, 135, 0.15);
 }
@@ -572,80 +531,81 @@ body.light-mode .btn.secondary:hover {
   transform: translateY(-2px);
 }
 
-  /*--------------------------- About Section (Light Mode) ---------------------------*/
+/*--------------------------- About Section (Light Mode) ---------------------------*/
 
 body.light-mode .about-area {
-    padding-top: 110px;
-    padding-bottom: 80px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: var(--current-bg-secondary); /* Soft Pink Background */
-  }
-  
-  body.light-mode .about {
-    width: 100%;
-    padding: 0 20px;
-  }
-  
-  body.light-mode .about-content {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 30px;
-    text-align: left;
-    background: var(--current-bg-card); /* Soft pink card */
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: var(--current-shadow);
-    border: 1px solid var(--current-border-color);
-  }
-  
-  body.light-mode .about-content h4 {
-    text-align: center;
-    font-size: 40px;
-    color: var(--smitten); /* Main pink color */
-    margin-bottom: 30px;
-  }
-  
-  body.light-mode .about-content ul {
-    color: var(--current-text-primary);
+  padding-top: 110px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--current-bg-secondary);
+}
 
-    text-align: justify;
-    list-style-position: outside;
-    padding-left: 20px;
-    margin: 0 auto;
-  }
-  
-  body.light-mode .about-content ul li {
-    list-style-type: disc;
-    margin-bottom: 10px;
-    color: var(--current-text-primary); /* stronger text */
+body.light-mode .about {
+  width: 100%;
+  padding: 0 20px;
+}
 
-  }
-  body.light-mode .about-content p {
-    color: var(--current-text-primary);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    letter-spacing: 0.2px;
-    text-align: justify;
-    margin-bottom: 20px;
-    text-shadow: 0.2px 0.2px 0.4px rgba(0, 0, 0, 0.05);
+body.light-mode .about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: left;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--current-border-color);
+  background-color: var(--current-bg-card);
+  box-shadow: 0 4px 12px var(--current-shadow);
+  transition: all 0.3s ease;
 
-  }
-  
-  body.light-mode .about-content h4::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    margin: 10px auto 30px auto;
-    background: linear-gradient(to right, var(--smitten), var(--carnation-pink));
-    border-radius: 2px;
-  }
+}
 
+body.light-mode .about-content h4 {
+  text-align: center;
+  font-size: 40px;
+  color: #C73987;
+  margin-bottom: 30px;
+}
 
+body.light-mode .about-content ul {
+  color: var(--current-text-primary);
+  text-align: justify;
+  list-style-position: outside;
+  padding-left: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  /*--------------------------- Skills Section (Light Mode, Proper Alignment + Better Contrast) ---------------------------*/
+body.light-mode .about-content ul li {
+  list-style-type: disc;
+  margin-bottom: 10px;
+  color: var(--current-text-primary);
+}
+
+body.light-mode .about-content p {
+  color: var(--current-text-primary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  text-align: justify;
+  margin-bottom: 20px;
+  text-shadow: 0.2px 0.2px 0.4px rgba(0, 0, 0, 0.05);
+
+}
+
+body.light-mode .about-content h4::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 12px auto 24px auto;
+  background: linear-gradient(90deg, var(--smitten), var(--mexican-pink));
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(199, 57, 135, 0.3);
+}
+
+/*--------------------------- Skills Section ---------------------------*/
 
 body.light-mode .skills-area {
   padding-top: 60px;
@@ -684,10 +644,10 @@ body.light-mode .skills-three-columns {
 }
 
 body.light-mode .skills-three-columns::before {
+  background: linear-gradient(to right, #C73987, #FDA5C8);
   content: "";
   width: 100%;
   height: 4px;
-  background: linear-gradient(to right, #C73987, #FDA5C8);
   border-radius: 2px;
   position: absolute;
   top: -30px;
@@ -696,9 +656,10 @@ body.light-mode .skills-three-columns::before {
 body.light-mode .skills-column,
 body.light-mode .skills-card {
   background-color: #fff0f6;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
   padding: 25px;
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -715,50 +676,69 @@ body.light-mode .skills-card:hover {
 
 body.light-mode .skills-card h4,
 body.light-mode .skills-column h4 {
-  text-align: center;
-  font-size: 22px;
   color: #C73987;
-  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
   margin: 0 0 20px;
   padding: 0;
+  font-size: 22px;
   line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: 700;
 }
+
+
 
 body.light-mode .skills-card h4::after,
 body.light-mode .skills-column h4::after {
+  background: linear-gradient(to right, #C73987, #FDA5C8);
   content: "";
   display: block;
   width: 80%;
   margin: 10px auto 20px auto;
   height: 2px;
-  background: linear-gradient(to right, #C73987, #FDA5C8);
+  margin-top: 10px;
+  margin-bottom: 20px;
   border-radius: 1px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 body.light-mode .skills-card i,
 body.light-mode .skills-column i,
 body.light-mode .skill-bar span i {
-  font-size: 16px;
   color: #ed5793;
+  font-size: 16px;
   width: 20px;
   min-width: 20px;
   text-align: center;
 }
+
+body.light-mode .skills-card h4 i,
+body.light-mode .skills-column h4 i {
+  font-size: 20px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  margin-right: 8px;
+  color: var(--smitten);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 
 body.light-mode .skill-bar {
   margin-bottom: 15px;
 }
 
 body.light-mode .skill-bar span {
+  color: #222;
   display: flex;
   align-items: center;
   gap: 12px;
   font-weight: 600;
-  color: #222;
   font-size: 15.5px;
   margin-bottom: 6px;
   line-height: 1.2;
@@ -771,13 +751,21 @@ body.light-mode .bar {
   overflow: hidden;
 }
 
+body.light-mode .skill-bar:hover .fill {
+  filter: brightness(1.1);
+}
+
+
 body.light-mode .fill {
+
+  background: linear-gradient(to right, #C73987, #FDA5C8);
   height: 100%;
   border-radius: 6px;
   width: 0;
-  background: linear-gradient(to right, #C73987, #FDA5C8);
   transition: width 1.8s ease-in-out;
 }
+
+
 
 body.light-mode .skills-column ul,
 body.light-mode .skills-card ul {
@@ -790,12 +778,12 @@ body.light-mode .skills-card ul {
 
 body.light-mode .skills-column ul li,
 body.light-mode .skills-card ul li {
+  color: #222;
+  border-bottom: 1px dashed #aaa;
   margin-bottom: 12px;
   font-size: 15px;
-  color: #222;
   display: flex;
   align-items: center;
-  border-bottom: 1px dashed #aaa;
   padding-bottom: 6px;
   gap: 10px;
 }
@@ -807,7 +795,6 @@ body.light-mode .skills-subheading {
   text-align: left;
 }
 
-/* Progress Track (background) */
 body.light-mode .skill-bar .bar {
   background-color: #f0f0f0;
   height: 10px;
@@ -819,132 +806,149 @@ body.light-mode .skill-bar .bar {
 body.light-mode .skill-bar .fill {
   background: linear-gradient(to right, #E7007D, #C73987);
   height: 100%;
-  width: 0; /* Start from 0 */
+  width: 0;
   border-radius: 999px;
   box-shadow: 0 2px 8px rgba(231, 0, 125, 0.3);
   transition: width 1.8s ease-in-out;
 }
 
-/* Example: Set width manually (to make it visible) */
-body.light-mode .aws-skill .fill { width: 90%; }
-body.light-mode .azure-skill .fill { width: 85%; }
-body.light-mode .m365-skill .fill { width: 80%; }
-body.light-mode .powershell-skill .fill { width: 75%; }
-body.light-mode .windows-server-skill .fill { width: 85%; }
-body.light-mode .github-skill .fill { width: 90%; }
+body.light-mode .aws-skill .fill {
+  width: 90%;
+}
+
+body.light-mode .azure-skill .fill {
+  width: 85%;
+}
+
+body.light-mode .m365-skill .fill {
+  width: 80%;
+}
+
+body.light-mode .powershell-skill .fill {
+  width: 75%;
+}
+
+body.light-mode .windows-server-skill .fill {
+  width: 85%;
+}
+
+body.light-mode .github-skill .fill {
+  width: 90%;
+}
 
 
-  /*--------------------------- Education Section (Light Mode) ---------------------------*/
+/*--------------------------- Education Section (Light Mode) ---------------------------*/
 
 body.light-mode .education {
-    padding: 100px 0;
-    background: var(--current-bg-secondary); 
-  }
-  
-  body.light-mode .education .heading {
-    text-align: center;
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: var(--smitten);
-  }
-  
-  body.light-mode .education .heading span {
-    color: var(--smitten);
-  }
-  
-  body.light-mode .education-timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 1px;
-    border-left: 3px solid var(--smitten);
-  }
-  
-  body.light-mode .education-entry {
-    position: relative;
-    margin-bottom: 50px;
-    padding-left: 30px;
-  }
-  
-  body.light-mode .education-entry::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 14px;
-    width: 16px;
-    height: 16px;
-    background: radial-gradient(circle, var(--carnation-pink) 40%, var(--mexican-pink));
-    border-radius: 50%;
-    box-shadow: 0 0 12px var(--mexican-pink);
-    animation: pulseDot 2s ease-in-out infinite;
-  }
-  
-  /* Reuse the same pulseDot animation */
-  
-  body.light-mode .education-entry .card {
-    background: var(--light-bg-card); /* Light card color */
-    border: 1px solid var(--light-border-light);
-    border-radius: 12px;
-    padding: 25px 30px;
-    box-shadow: 0 6px 20px var(--light-shadow-soft);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  body.light-mode .education-entry .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px var(--light-shadow-medium);
-  }
-  
-  body.light-mode .education-entry .date {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--mexican-pink);
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  body.light-mode .education-entry .date i {
-    color: var(--mexican-pink);
-    font-size: 1rem;
-  }
-  
-  body.light-mode .education-entry h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--current-text-primary);
-    margin-bottom: 8px;
-  }
-  
-  body.light-mode .education-entry p {
-    font-size: 0.95rem;
-    color: var(--current-text-primary);
-    margin-bottom: 10px;
-  }
-  
-  body.light-mode .education-entry h5 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--smitten);
-    margin-bottom: 8px;
-  }
-  
-  body.light-mode .education-entry ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-top: 5px;
-  }
-  
-  body.light-mode .education-entry ul li {
-    color: var(--current-text-primary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 6px;
-  }
-  
-  /*--------------------------- Experience Section (Light Mode) ---------------------------*/
+  padding: 100px 0;
+  background: var(--current-bg-secondary);
+}
+
+body.light-mode .education .heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: var(--smitten);
+}
+
+body.light-mode .education .heading span {
+  color: var(--mexican-pink);
+}
+
+
+body.light-mode .education-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 1px;
+  border-left: 3px solid var(--smitten);
+}
+
+body.light-mode .education-entry {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 30px;
+}
+
+body.light-mode .education-entry::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 14px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle, var(--carnation-pink) 40%, var(--mexican-pink));
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--mexican-pink);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+
+body.light-mode .education-entry .card {
+  background: var(--light-bg-card);
+  border: 1px solid var(--light-border-light);
+  box-shadow: 0 6px 20px var(--light-shadow-soft);
+  border-radius: 12px;
+  padding: 25px 30px;
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode .education-entry .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px var(--light-shadow-medium);
+}
+
+body.light-mode .education-entry .date {
+  color: var(--mexican-pink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+body.light-mode .education-entry .date i {
+  color: var(--mexican-pink);
+  font-size: 1rem;
+}
+
+body.light-mode .education-entry h3 {
+  color: var(--current-text-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+body.light-mode .education-entry p {
+  font-size: 0.95rem;
+  color: var(--current-text-primary);
+  margin-bottom: 10px;
+}
+
+body.light-mode .education-entry h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--smitten);
+  margin-bottom: 8px;
+}
+
+body.light-mode .education-entry ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+body.light-mode .education-entry ul li {
+  color: var(--current-text-primary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/*--------------------------- Experience Section (Light Mode) ---------------------------*/
 
 body.light-mode .experience {
   padding: 80px 20px;
@@ -958,6 +962,11 @@ body.light-mode .experience .heading {
   margin-bottom: 60px;
   color: var(--smitten);
 }
+
+body.light-mode .experience .heading span {
+  color: var(--mexican-pink);
+}
+
 
 body.light-mode .experience-grid {
   display: grid;
@@ -974,7 +983,7 @@ body.light-mode .experience-card {
   border-top: 3px solid var(--light-border-medium);
   box-shadow: var(--light-shadow-soft);
   border-radius: 16px;
- 
+  backdrop-filter: blur(6px);
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
@@ -990,7 +999,6 @@ body.light-mode .experience-card:hover {
   box-shadow: var(--light-shadow-medium);
 }
 
-/* Logo */
 body.light-mode .experience-card img.logo {
   max-width: 80px;
   height: auto;
@@ -1001,35 +1009,33 @@ body.light-mode .experience-card img.logo {
   box-shadow: 0 0 6px rgba(253, 165, 200, 0.3);
 }
 
-/* Titles */
 body.light-mode .experience-card h3 {
-  font-size: 1.25rem;
   color: var(--smitten);
+  font-size: 1.1rem;
   text-align: center;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   font-weight: 700;
 }
 
 body.light-mode .experience-card h4 {
-  font-size: 1rem;
   color: var(--china-pink);
+  font-size: 1rem;
   text-align: center;
   margin-bottom: 14px;
   font-weight: 600;
 }
 
-/* Divider */
 body.light-mode .experience-card hr {
-  border: none;
   border-top: 1px solid var(--light-border-light);
+  border: none;
   margin: 14px 0;
 }
 
-/* Bullet Points */
+
 body.light-mode .experience-card ul {
+  color: var(--current-text-primary);
   list-style: disc;
   padding-left: 18px;
-  color: var(--current-text-primary);
   margin: 0 0 20px;
   flex-grow: 1;
 }
@@ -1042,7 +1048,6 @@ body.light-mode .experience-card ul li {
   color: var(--light-text-secondary);
 }
 
-/* Tools / Skills Badges */
 body.light-mode .experience-card .tools {
   display: flex;
   flex-wrap: wrap;
@@ -1069,10 +1074,19 @@ body.light-mode .experience-card .tools span:hover {
   color: #fff;
 }
 
-/* Footer Date */
+body.light-mode .tools span {
+  display: inline-block;
+  background-color: var(--badge-bg-light);
+  color: var(--badge-text-light);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 body.light-mode .card-footer {
-  font-size: 0.85rem;
   color: var(--light-text-muted);
+  font-size: 0.85rem;
   text-align: left;
   margin-top: auto;
   display: flex;
@@ -1082,19 +1096,18 @@ body.light-mode .card-footer {
 
 body.light-mode .experience-card .date-location {
   font-size: 0.95rem;
-  color: var(--light-text-muted); /* soft muted text */
+  color: var(--light-text-muted);
   font-style: italic;
   display: block;
   margin-bottom: 10px;
   text-align: left;
 }
 
-
 /*--------------------------- Project Section (Light Mode Premium) ---------------------------*/
 
 body.light-mode .project-content {
   padding: 90px 0;
-  background: linear-gradient(to bottom, #fff0f5 0%, #fde4ee 100%); /* Subtle light pink gradient background */
+  background: linear-gradient(to bottom, #fff0f5 0%, #fde4ee 100%);
 }
 
 body.light-mode .project-title {
@@ -1103,9 +1116,9 @@ body.light-mode .project-title {
 }
 
 body.light-mode .project-title h4 {
+  color: var(--smitten);
   text-transform: uppercase;
   font-size: 40px;
-  color: var(--smitten);
   margin-bottom: 20px;
   letter-spacing: 1px;
 }
@@ -1126,15 +1139,15 @@ body.light-mode .project-tabs {
 }
 
 body.light-mode .tab-btn {
-  padding: 10px 22px;
+  box-shadow: 0 2px 8px rgba(231, 0, 125, 0.1);
   border: 2px solid var(--carnation-pink);
   background: #ffffff;
   color: var(--smitten);
+  padding: 10px 22px;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(231, 0, 125, 0.1);
 }
 
 body.light-mode .tab-btn:hover,
@@ -1144,7 +1157,6 @@ body.light-mode .tab-btn.active {
   box-shadow: 0 6px 16px rgba(231, 0, 125, 0.2);
 }
 
-/* Grid layout */
 body.light-mode .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -1154,12 +1166,12 @@ body.light-mode .projects {
   transition: all 0.3s ease-in-out;
 }
 
-/* Individual Project Card */
 body.light-mode .project {
-  background: rgba(255, 255, 255, 0.9); /* Soft semi-transparent white */
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(231, 0, 125, 0.08);
   border: 1px solid #f7c2d2;
   border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
   padding: 30px;
   text-align: center;
   transition: all 0.3s ease;
@@ -1175,7 +1187,7 @@ body.light-mode .project {
   visibility: hidden;
   position: absolute;
   pointer-events: none;
-  box-shadow: 0 8px 30px rgba(231, 0, 125, 0.08);
+
 }
 
 body.light-mode .project.show {
@@ -1187,53 +1199,51 @@ body.light-mode .project.show {
 }
 
 body.light-mode .project:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 15px 40px rgba(231, 0, 125, 0.2);
+  border-color: #EFA9AE;
 }
 
-/* Project Icon */
 body.light-mode .project i {
   background-color: var(--smitten);
+  color: #ffffff;
   width: 60px;
   height: 60px;
-  color: #ffffff;
   font-size: 26px;
   line-height: 60px;
   border-radius: var(--radius-circle);
   margin-bottom: 20px;
 }
 
-/* Project Title */
+
 body.light-mode .project h4 {
   font-size: 24px;
   margin: 15px 0 10px;
   color: var(--smitten);
 }
 
-/* Project Description */
 body.light-mode .project p {
-  text-align: justify;
   color: var(--current-text-primary);
+  text-align: justify;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* Project Buttons */
 body.light-mode .project-buttons {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 body.light-mode .project-buttons .btn {
-  display: inline-block;
-  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(231, 0, 125, 0.25);
   background-color: var(--smitten);
   color: #ffffff;
+  display: inline-block;
+  padding: 10px 20px;
   font-weight: 600;
   border-radius: 999px;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 16px;
-  box-shadow: 0 4px 12px rgba(231, 0, 125, 0.25);
   border: none;
 }
 
@@ -1245,13 +1255,14 @@ body.light-mode .project-buttons .btn:hover {
 }
 
 
-  
+
 /*--------------------------- Certificates Section (Light Mode) ---------------------------*/
 
 body.light-mode .certificates-content {
-  padding: 90px 0;
-  padding-top: 80px;
   background: #ffffff;
+  padding: 90px 0;
+  padding-top: 124px;
+  padding-bottom: 224px;
   text-align: center;
 }
 
@@ -1263,7 +1274,7 @@ body.light-mode .section-title h4 {
 }
 
 body.light-mode .section-title p {
-  color: var(--current-text-primary); /* Changed to dark text instead of light pink */
+  color: var(--current-text-primary);
   margin-bottom: var(--spacing-lg);
   font-size: 16px;
   padding-top: 20px;
@@ -1310,7 +1321,7 @@ body.light-mode .cert-card h5 {
 }
 
 body.light-mode .cert-card p {
-  color: var(--current-text-secondary); /* Changed from carnation pink to secondary dark text for better readability */
+  color: var(--current-text-secondary);
   font-size: 14px;
   margin-bottom: 15px;
 }
@@ -1323,36 +1334,39 @@ body.light-mode .cert-buttons {
 }
 
 body.light-mode .cert-card .btn {
-  background-color: var(--smitten); /* Pink button */
+  background-color: var(--smitten);
   color: white;
+  padding: 10px 20px;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 25px;
   font-weight: 600;
-  border: none;
-  transition: 0.3s ease;
+  transition: var(--transition-fast);
 }
 
 body.light-mode .cert-card .btn:hover {
-  background-color: #ffffff; /* Full white on hover */
-  color: var(--smitten); /* Text becomes pink */
+  background-color: #ffffff;
+  color: var(--smitten);
   border: 2px solid var(--smitten);
-  box-shadow: 0 4px 12px rgba(199, 57, 135, 0.25); /* Soft pink glow */
+  box-shadow: 0 4px 12px rgba(199, 57, 135, 0.25);
   transform: translateY(-2px);
 }
 
-/* Disabled Button */
+
 body.light-mode .btn.disabled {
   pointer-events: none;
   background-color: var(--china-pink);
-  color: #222; /* Dark text for disabled buttons */
+  color: #222;
   opacity: 0.7;
 }
 
-  
+
 
 /*==================== Career Goals Section (Light Mode) ====================*/
 
 body.light-mode #career-goals {
+  background: #fff0f6;
   padding: 100px 20px;
-  background: #fff0f6; /* Light pink background */
   text-align: center;
 }
 
@@ -1386,7 +1400,7 @@ body.light-mode .career-heading h2 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  text-shadow: 0px 2px 6px rgba(231, 0, 125, 0.3); /* soft pink glow, not black */
+  text-shadow: 0px 2px 6px rgba(231, 0, 125, 0.3);
   margin: 0;
   padding: 0;
 }
@@ -1394,21 +1408,21 @@ body.light-mode .career-heading h2 {
 
 
 body.light-mode .career-subtitle {
+  color: #666666;
   font-size: 1rem;
-  color: #666666; /* Soft gray for subtitle */
   margin-top: 8px;
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
-/* Main card (career card) */
 body.light-mode .career-card-modern {
   background: #ffffff;
+  backdrop-filter: blur(12px);
+  border: 2px solid #E7007D;
+  box-shadow: 0 8px 25px rgba(231, 0, 125, 0.15);
+  transition: all 0.3s ease;
   border-radius: var(--radius-lg);
   padding: 50px;
-  border: 2px solid #E7007D; /* Strong Mexican Pink Border */
-  box-shadow: 0 8px 25px rgba(231, 0, 125, 0.15); /* Soft pink glow */
-  transition: all 0.3s ease;
 }
 
 body.light-mode .career-card-modern:hover {
@@ -1417,8 +1431,8 @@ body.light-mode .career-card-modern:hover {
 }
 
 body.light-mode .goal-text {
+  color: #040404;
   font-size: 1.2rem;
-  color: #040404; /* Very dark black text */
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 30px;
@@ -1430,24 +1444,23 @@ body.light-mode .highlight {
 }
 
 body.light-mode .callout-box-modern {
+  background-color: #fff0f6;
+  border-left: 5px solid #FDA5C8;
+  box-shadow: 0 4px 10px rgba(231, 0, 125, 0.08);
+  color: #222222;
   margin-top: 30px;
   padding: 20px;
-  background-color: #fff0f6;
-  border-left: 5px solid #FDA5C8; /* thicker pink border */
   border-radius: 8px;
-  color: #222222;
   font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  box-shadow: 0 4px 10px rgba(231, 0, 125, 0.08); /* soft internal shadow */
 }
 
-/* Callout icon */
 body.light-mode .callout-box-modern i {
   font-size: 1.5rem;
-  color: #E7007D; /* Mexican Pink */
+  color: #E7007D;
 }
 
 body.light-mode .animated-icon {
@@ -1462,31 +1475,7 @@ body.light-mode .animated-icon:hover {
 }
 
 
-/* Animations */
-@keyframes pulse {
-  0% {
-      transform: scale(1);
-      opacity: 0.9;
-  }
-  100% {
-      transform: scale(1.2);
-      opacity: 1;
-  }
-}
 
-@keyframes float {
-  0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-6px);
-  }
-  100% {
-      transform: translateY(0);
-  }
-}
-
-/* Reveal Animation */
 body.light-mode .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -1498,41 +1487,38 @@ body.light-mode .reveal.active {
   transform: translateY(0);
 }
 
-/* === Volunteering Section (Light Mode) === */
+/* =================================Volunteering Section (Light Mode)================================= */
 body.light-mode #volunteering {
   padding: 80px 0;
   text-align: center;
-  background: #ffffff; /* Very light pink or white background */
+  background: #ffffff;
 }
 
-/* Section Heading */
 body.light-mode #volunteering h4 {
   color: var(--mexican-pink);
-  font-size: 36px; /* Slightly bigger to match other sections */
+  font-size: 36px;
   font-weight: 800;
   margin-bottom: var(--spacing-md);
 }
 
-/* Volunteer Card */
 body.light-mode #volunteering .volunteer-card {
-  background-color: #fff0f6; /* Very light pink background */
-  padding: 30px;
-  border-radius: 16px;
-  max-width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 12px 30px rgba(231, 0, 125, 0.1);
+  background-color: #ffe5f0;
+  color: var(--smitten);
+  box-shadow: 0 8px 20px rgba(199, 57, 135, 0.15);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   will-change: transform, box-shadow;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #f4b6cb;
 }
 
-
-/* Volunteer Card Hover */
 body.light-mode #volunteering .volunteer-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 35px rgba(231, 0, 125, 0.25);
 }
 
-/* Volunteer Icon Background */
 body.light-mode #volunteering .volunteer-icon {
   background-color: var(--mexican-pink);
   width: 80px;
@@ -1544,153 +1530,150 @@ body.light-mode #volunteering .volunteer-icon {
   justify-content: center;
 }
 
-/* Volunteer Icon Inside */
 body.light-mode #volunteering .volunteer-icon i {
-  color: #ffffff; /* White icon inside pink circle */
+  color: #ffffff;
   font-size: 30px;
 }
 
-/* Volunteer Card Paragraph */
 body.light-mode #volunteering p {
   font-size: 18px;
   line-height: 1.6;
-  color: #333333; /* Slightly dark gray for comfortable reading */
+  color: #333333;
 }
 
-  /*--------------------------- Contact Me (Light Mode) ---------------------------*/
+/*--------------------------- Contact Me (Light Mode) ---------------------------*/
 body.light-mode .contact-content {
-    padding: 100px 30px;
-    background: var(--light-bg-secondary);
-    text-align: center;
-    position: relative;
-  }
+  background: linear-gradient(to bottom right, #fff0f6, #fbe3ee);
+  padding: 100px 30px;
+  text-align: center;
+  position: relative;
+}
 
+body.light-mode .contact-title h4 {
+  color: #E7007D; /* Mexican Pink */
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
 
-  
-  body.light-mode .contact-title h4 {
-    text-transform: uppercase;
-    font-size: 2.5rem;
-    color: var(--mexican-pink);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-  }
-  
-  body.light-mode .contact-title p {
-    font-size: 1rem;
-    color: #8a4f68;   
-     max-width: 600px;
-    margin: 0 auto 40px;
-  }
-  
-  body.light-mode .contact-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    align-items: flex-start;
-  }
-  
-  /* === Contact Info Block Light === */
-  body.light-mode .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1 1 300px;
-    text-align: left;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--light-text-primary);
-  }
-  
-  body.light-mode .contact-info h5 {
-    font-size: 22px;
-    color: var(--light-smitten);
-    margin-bottom: 12px;
-  }
-  
-  body.light-mode .contact-info a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--light-text-primary);
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  body.light-mode .contact-info a:hover {
-    color: var(--color-light-carnation-pink);
-    transform: translateX(4px);
-  }
-  
-  body.light-mode .contact-info i {
-    font-size: 18px;
-    color: var(--color-light-carnation-pink);
-    width: 22px;
-    text-align: center;
-  }
-  
-  /* === Contact Form Light === */
-  /* === Form Consent Text Light Mode === */
+body.light-mode .contact-title p {
+  color: #8a4f68;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+body.light-mode .contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+body.light-mode .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 300px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #040404;
+}
+
+body.light-mode .contact-info h5 {
+  font-size: 22px;
+  color: #C73987; /* Smitten */
+  margin-bottom: 12px;
+}
+
+body.light-mode .contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #040404;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.light-mode .contact-info a:hover {
+  color: #C73987;
+  transform: translateX(5px);
+}
+
+body.light-mode .contact-info i {
+  font-size: 18px;
+  color: #C73987;
+  width: 22px;
+  text-align: center;
+}
+
+body.light-mode .contact-info i.fab {
+  font-weight: 600;
+}
+
+body.light-mode .contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 2px solid #FDA5C8;
+  color: #040404;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+body.light-mode .contact-form input:focus,
+body.light-mode .contact-form textarea:focus {
+  border-color: #C73987;
+  box-shadow: 0 0 10px rgba(199, 57, 135, 0.3);
+  outline: none;
+}
+
+body.light-mode .contact-form input::placeholder,
+body.light-mode .contact-form textarea::placeholder {
+  color: #999999;
+  font-size: 14px;
+}
+
 body.light-mode .form-consent {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #C73987; /* Strong Smitten Pink */
-  font-weight: 600;
   margin: 10px 0 20px;
+  align-self: center;
+  text-align: left;
+  flex-wrap: wrap;
+  color: #C73987;
 }
 
-  body.light-mode .contact-form {
-    flex: 1 1 400px;
-    display: flex;
-    flex-direction: column;
-    max-width: 700px;
-    width: 100%;
-  }
-  
-  body.light-mode .contact-form input,
-  body.light-mode .contact-form textarea {
-      width: 100%;
-      padding: 14px 18px;
-      margin-bottom: 16px;
-      border-radius: 10px;
-      background-color: #ffffff; /* Pure white for clean premium feel */
-      border: 2px solid #FDA5C8; /* Carnation pink strong border */
-      color: #040404; /* Strong rich black text */
-      font-size: 16px;
-      transition: all 0.3s ease;
-  }
-  
-  body.light-mode .contact-form input:focus,
-  body.light-mode .contact-form textarea:focus {
-      border-color: #C73987; /* Smitten pink on focus */
-      box-shadow: 0 0 10px rgba(199, 57, 135, 0.3);
-      outline: none;
-  }
-  body.light-mode .contact-form input::placeholder,
-  body.light-mode .contact-form textarea::placeholder {
-      color: #999999; /* Mid gray placeholder for visibility */
-      font-size: 14px;
-  }
-  
-/* === Consent Checkbox === */
 body.light-mode input[type="checkbox"] {
+  background-color: #ffffff;
+  border: 2px solid #FDA5C8;
   appearance: none;
   width: 18px;
   height: 18px;
-  background-color: #ffffff;
-  border: 2px solid #FDA5C8; 
   border-radius: 4px;
   position: relative;
-  margin: 0;
-  cursor: pointer;
   top: 0.1em;
+  margin: 0;
   padding: 0;
+  cursor: pointer;
   box-shadow: none;
-  
-  vertical-align: middle;
 }
 
 body.light-mode input[type="checkbox"]:checked::after {
@@ -1705,17 +1688,26 @@ body.light-mode input[type="checkbox"]:checked::after {
   transform: rotate(45deg);
 }
 
-/* === Submit Button Light Mode (Final Premium Version) === */
+body.light-mode .form-consent label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.5;
+  cursor: pointer;
+  padding-top: 2px;
+  color: #7a4c5d;
+}
+
 body.light-mode .contact-form .submit {
-  background: linear-gradient(to right, #E7007D, #C73987); /* Vibrant, Premium Pink */
-  color: #ffffff; /* White text */
-  font-weight: 700;
+  background: linear-gradient(to right, #E7007D, #C73987);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(231, 0, 125, 0.25);
+  font-weight: bold;
   padding: 14px 30px;
-  border-radius: 999px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(231, 0, 125, 0.3);
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 16px;
   align-self: center;
   max-width: 250px;
@@ -1723,128 +1715,88 @@ body.light-mode .contact-form .submit {
   margin-top: 10px;
 }
 
-/* === Hover State === */
 body.light-mode .contact-form .submit:hover {
   background: #ffffff;
   color: #E7007D;
   border: 2px solid #E7007D;
   transform: scale(1.05);
-  box-shadow: 0 8px 30px rgba(231, 0, 125, 0.4);
+  box-shadow: 0 8px 24px rgba(231, 0, 125, 0.3);
 }
 
-
-
-/* === Contact Info Section (Reach Me) === */
-body.light-mode .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1 1 300px;
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #040404; 
+body.light-mode #msg {
+  color: #008060;
+  font-size: 14px;
+  margin-top: var(--spacing-sm);
 }
 
-body.light-mode .contact-info a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #040404;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
+body.light-mode .contact-form .error {
+  color: #cc0000;
+  font-size: 14px;
+  margin-top: var(--spacing-sm);
 }
 
-body.light-mode .contact-info a:hover {
-  color: #C73987; 
-  transform: translateX(5px);
-}
-
-body.light-mode .contact-info i {
-  font-size: 18px;
-  color: #C73987;
-  width: 22px;
-  text-align: center;
-}
-
-  body.light-mode #msg {
-    color: #00cc88;
-    font-size: 14px;
-  }
-  
-  body.light-mode .contact-form .error {
-    color: #ff4d4d;
-    font-size: 14px;
-  }
-  
-/* === Common Toast Position and Animation === */
-/* === Toast Base === */
-.toast {
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+/*--------------------------- Toast (Light Mode) ---------------------------*/
+body.light-mode .toast {
   position: fixed;
-  top: 100px;
+  top: 90px;
   left: 50%;
   transform: translateX(-50%) translateY(-20px);
-  z-index: 9999;
-  padding: 10px 20px;
+  background: #f2f2f2;
+  color: #333333;
+  padding: 12px 24px;
   border-radius: 12px;
-  font-size: 16px;
   font-weight: 600;
-  background: #f5a6c5; /* Soft pink solid */
-  color: #040404; /* Rich black text */
-  box-shadow: 0 6px 20px rgba(253, 165, 200, 0.4);
-  max-width: 300px;
-  width: auto;
+  font-size: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
   text-align: center;
+  max-width: 320px;
+  width: auto;
 }
 
-/* === When Toast is Visible === */
-.toast.show {
+body.light-mode .toast.show {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
 
-/* === When Toast is Hidden === */
-.toast.hidden {
+body.light-mode .toast.hidden {
   display: none;
 }
 
-/* === Toast Variants (Success, Error) === */
-.toast.success {
-  background: #a8e6cf; /* Mint green solid */
-  color: #2b4c3f;
+body.light-mode .toast.success {
+  background: #d4edda;
+  color: #155724;
 }
 
-.toast.error {
-  background: #ff9a9e; /* Soft red solid */
-  color: #5c0000;
+body.light-mode .toast.error {
+  background: #f8d7da;
+  color: #721c24;
 }
 
-  
-/* Footer Top Border Gradient */
+
+
 body.light-mode .footer::before {
+  background: linear-gradient(to right, #FDA5C8, #E7007D, #C73987);
   content: "";
   display: block;
-  height: 4px;
+  height: 3px;
   width: 100%;
-  background: linear-gradient(to right, #FDA5C8, #E7007D, #C73987); /* Pink gradient */
   margin-bottom: 30px;
 }
 
-/* Footer Main Background */
 body.light-mode .footer {
-  background-color: #ffffff; /* Strong pure white for premium look */
-  color: #333333; /* Soft black for better contrast */
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 -2px 25px rgba(231, 0, 125, 0.08);
   padding: var(--spacing-lg) var(--spacing-md);
   text-align: center;
-  box-shadow: 0 -2px 25px rgba(231, 0, 125, 0.08); /* Very soft pink shadow */
+ 
 }
 
-/* Footer Container (Light Mode) */
 body.light-mode .footer-container {
-  max-width: 1200px; /* same size as Dark Mode */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -1854,148 +1806,188 @@ body.light-mode .footer-container {
 }
 
 
-/* Footer Social Icons */
 body.light-mode .footer-socials a {
-  color: #C73987; /* Smitten pink */
+  color: #C73987;
   font-size: 24px;
   margin: 0 12px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode .footer-socials a:hover {
-  color: #E7007D; /* Mexican pink on hover */
+  color: #E7007D;
   transform: scale(1.2);
 }
 
-/* Footer Main Text */
 body.light-mode .footer-text p {
   font-size: 15px;
   margin: 8px 0 4px 0;
-  color: #555555; /* Medium gray for readable light mode */
+  color: #555555;
   font-weight: 400;
 }
 
-/* Strong Words */
 body.light-mode .footer-text strong {
-  color: #C73987; /* Smitten pink */
+  color: #C73987;
   font-weight: 600;
 }
 
-/* Footer Bottom Copyright */
 body.light-mode .footer-text p:last-child {
-  color: #777777; /* Slightly lighter but still visible */
+  color: #777777;
   font-size: 14px;
   margin-top: 5px;
 }
 
-/* ---------------- Fix Mobile Responsive in Light Mode ---------------- */
-@media (max-width: 992px) {
-  body.light-mode .header-area .header nav,
-  body.light-mode .header-area .header .navbar,
-  body.light-mode .desktop-logo {
-    display: none;
-  }
-
-  body.light-mode .menu_icon {
-    display: block !important;
-    font-size: 26px;
-    color: var(--light-text-primary);
-    cursor: pointer;
-    background: none;
-    border: none;
-    z-index: 9999;
-  }
-
-  body.light-mode .header-area {
-    padding: 12px 20px;
-  }
-
-  body.light-mode .header-area .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+body.light-mode .neon-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #C73987; 
+  text-shadow:
+    0 1px 2px rgba(231, 0, 125, 0.3),
+    0 2px 4px rgba(231, 0, 125, 0.2),
+    0 4px 8px rgba(199, 57, 135, 0.2);
 }
 
-
-/* Sidebar Panel - Light Mode */
-body.light-mode .mobile-sidebar {
+/* Unified Mobile Sidebar (Light Mode) */
+body.light-mode #mobileSidebar {
+  background: linear-gradient(145deg, #ffffff, #f7f0f4);
+  box-shadow: 4px 0 20px rgba(231, 0, 125, 0.12);
+  border-right: 1px solid #e2d1d9;
+  color: var(--mexican-pink);
+  width: 80%;
+  max-width: 320px;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+  padding: 40px 24px 30px 24px;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+    gap: 20px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 100%;
-  background: linear-gradient(145deg, #ffffff, #fce6f1); /* soft white-pink gradient */
-  backdrop-filter: blur(12px);
-  box-shadow: 4px 0 20px rgba(231, 0, 125, 0.2); /* soft pink shadow */
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
   z-index: 9999;
-  padding: 25px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 0 18px 0 0;  
 }
 
-/* Sidebar active state */
-body.light-mode .mobile-sidebar.active {
+html, body {
+  height: 100%;
+}
+
+body.light-mode #mobileSidebar.active {
   transform: translateX(0);
   animation: slideIn 0.4s cubic-bezier(0.25, 1.25, 0.5, 1);
 }
 
-/* Sidebar Logo */
-body.light-mode .mobile-sidebar .logo img {
-  max-width: 140px;
-  height: auto;
-  filter: brightness(1.1); /* slightly brighter in light mode */
-}
-
-/* Sidebar Menu */
-body.light-mode .mobile-sidebar ul {
+body.light-mode #mobileSidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 30px;
+  margin-top: 0;
 }
 
-/* Sidebar Menu Links */
-body.light-mode .mobile-sidebar ul li a {
+body.light-mode #mobileSidebar ul li a {
+  color: #c2185b;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 12px 18px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #c73987; /* smitten pink text */
+  font-size: 1.05rem;
   border-radius: 12px;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  outline: none;
+  border: 2px solid transparent; /* add transparent border */
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Active Item */
-body.light-mode .mobile-sidebar ul li a.active {
-  background: rgba(199, 57, 135, 0.1); /* light pink highlight */
-  border-left: 4px solid #e7007d; /* stronger pink accent */
-  color: #e7007d;
-  padding-left: 14px;
+body.light-mode #mobileSidebar ul li a:hover,
+body.light-mode #mobileSidebar ul li a:focus {
+  color: #e91e63;
+  background: rgba(231, 0, 125, 0.08);
+  border-color: #e91e63; /* 🔥 pink border on hover */
+  text-shadow: 0 0 6px rgba(231, 0, 125, 0.4);
+  transform: translateX(4px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(231, 0, 125, 0.2);
 }
 
-/* Icon inside links */
-body.light-mode .mobile-sidebar ul li a i {
-  font-size: 24px;
+body.light-mode #mobileSidebar ul li a:active {
+  color: #e91e63;
+  background: rgba(231, 0, 125, 0.12);
+  border-color: #c2185b;
+  transform: translateX(2px) scale(0.98);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode #mobileSidebar ul li a i {
+  color: #e91e63;
+  font-size: 22px;
   min-width: 28px;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
-/* Hover effect */
+body.light-mode #mobileSidebar ul li a:hover i {
+  color: #e91e63;
+}
+
+body.light-mode #sidebarOverlay {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  display: none;
+}
+
+body.light-mode #sidebarOverlay.active {
+  display: block;
+}
+
+body.light-mode #mobileSidebar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+
+}
+
+body.light-mode #mobileSidebar .logo img {
+  filter: brightness(1.1) saturate(1.2);
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+
+body.light-mode .mobile-sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .mobile-sidebar ul li a {
+  padding: 12px 16px;
+  font-size: 1.1rem;
+}
+
 body.light-mode .mobile-sidebar ul li a:hover {
-  background: rgba(199, 57, 135, 0.08); /* subtle pink hover */
-  color: #e7007d;
-  transform: translateX(4px);
+  color: var(--smitten);
 }
 
-/* Hamburger Button */
 body.light-mode .menu_icon {
   display: flex;
   align-items: center;
@@ -2010,15 +2002,86 @@ body.light-mode .menu_icon {
 
 body.light-mode .menu_icon i {
   font-size: 26px;
-  color: #c73987; /* smitten pink icon */
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: #e91e63;
+  transition: transform 0.3s ease;
 }
 
-/* When menu is open - rotate */
 body.light-mode .menu_icon.open i {
   transform: rotate(90deg);
-  color: #e7007d; /* brighter pink when open */
 }
 
 
 
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--target-width);
+  }
+}
+
+
+
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
