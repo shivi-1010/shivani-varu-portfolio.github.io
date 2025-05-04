@@ -1325,6 +1325,9 @@ body.light-mode .cert-card:hover {
 body.light-mode .cert-card img {
   width: 100px;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
   transition: transform var(--transition-fast);
 }
