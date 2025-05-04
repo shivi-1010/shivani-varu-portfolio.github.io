@@ -1,9 +1,13 @@
 /* ========== RESPONSIVE DESIGN ========== */
 
-
-
 /* Small phones (320px - 480px) */
 @media screen and (max-width: 480px) {
+
+  .desktop-logo {
+    display: none !important;
+  }
+
+
   /* Typography scaling */
   .profile-text h1 {
     font-size: 2.2rem;
@@ -19,15 +23,29 @@
   
   /* Hero section adjustments */
   .FirstElement {
-    flex-direction: column;
-    gap: 30px;
     padding: 40px 15px;
     margin-top: 60px;
   }
   
-  .FirstElement .profile-photo {
-    width: 220px;
-    height: 220px;
+  /* This is the key part - rearranging the hero wrapper */
+  .hero-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .hero-wrapper .profile-photo {
+    order: -1; /* Force photo to top */
+    margin-bottom: 20px;
+    width: 180px;
+    height: 180px;
+  }
+  
+  .profile-text {
+    align-items: center; /* Center text content */
+    text-align: center;
+    max-width: 100%;
   }
   
   /* Button adjustments */
@@ -85,23 +103,71 @@
   }
 }
 
-/* Medium phones and small tablets (481px - 767px) */
+/* Medium phones (481px - 767px) */
 @media screen and (min-width: 481px) and (max-width: 767px) {
+
+  .desktop-logo {
+    display: none !important;
+  }
+  
   /* Typography scaling */
   .profile-text h1 {
-    font-size: 2.6rem;
+    font-size: 2.5rem;
+  }
+  
+  .profile-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  #typed-role {
+    font-size: 1.1rem;
   }
   
   /* Hero section adjustments */
   .FirstElement {
-    flex-direction: column;
-    gap: 40px;
     padding: 50px 20px;
+    margin-top: 60px;
+    gap: 30px;
   }
   
-  .FirstElement .profile-photo {
-    width: 250px;
-    height: 250px;
+  .hero-wrapper .profile-photo {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+  
+  /* Button adjustments */
+  .btn-group {
+    justify-content: center;
+  }
+  
+  .btn {
+    min-width: 160px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+}
+    
+
+/* Tablets and small laptops (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .desktop-logo {
+    display: none !important;
+  }
+  /* Hero section adjustments */
+  .FirstElement {
+    padding: 60px 30px;
+  }
+  
+  .hero-wrapper {
+    gap: 30px;
+  }
+  
+  .hero-wrapper .profile-photo {
+    width: 260px;
+    height: 260px;
   }
   
   /* Header & Navigation */
@@ -113,29 +179,23 @@
     display: flex;
   }
   
-  /* Section spacing */
-  .section-title.center h4,
-  .about-content h4,
-  .project-title h4,
-  .education .heading,
-  .experience .heading,
-  .contact-title h4 {
-    font-size: 2rem;
-  }
-  
   /* Cards & containers */
   .skills-three-columns {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
-  /* Project tabs */
-  .project-tabs {
-    gap: 10px;
+  .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
   
-  .tab-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+  /* Contact section */
+  .contact-flex {
+    gap: 40px;
+  }
+  
+  /* Career goals section */
+  .career-card-modern {
+    padding: 40px 30px;
   }
 }
 
@@ -388,17 +448,12 @@
   }
 }
 
-/* === DEVICE-SPECIFIC OPTIMIZATIONS === */
 
 /* Foldable devices (when folded) */
 @media screen and (max-width: 320px) {
-  .FirstElement {
-    padding: 30px 15px;
-  }
-  
-  .FirstElement .profile-photo {
-    width: 180px;
-    height: 180px;
+  .hero-wrapper .profile-photo {
+    width: 150px;
+    height: 150px;
   }
   
   .profile-text h1 {
@@ -447,14 +502,26 @@
 /* Landscape orientation for mobile */
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .FirstElement {
-    flex-direction: row;
+    padding: 30px 20px;
     min-height: auto;
-    padding: 40px 20px;
   }
   
-  .FirstElement .profile-photo {
-    width: 180px;
-    height: 180px;
+  .hero-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .hero-wrapper .profile-photo {
+    order: 0; /* Reset order for landscape */
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0;
+  }
+  
+  .profile-text {
+    align-items: flex-start;
+    text-align: left;
   }
   
   .header-area.sticky {

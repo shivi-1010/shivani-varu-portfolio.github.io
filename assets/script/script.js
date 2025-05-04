@@ -63,6 +63,31 @@ const Utils = {
     console.error(message, error);
   },
 
+  reorderHeroForMobile: function () {
+    try {
+      // const heroWrapper = document.querySelector('.hero-wrapper');
+      const heroWrapper = document.querySelector('.hero-wrapper');
+      if (!heroWrapper) return; 
+      // Check if the heroWrapper exists before proceeding
+      
+      const profilePhoto = document.querySelector('.hero-wrapper .profile-photo');
+      const profileText = document.querySelector('.hero-wrapper .profile-text');
+  
+      if (window.innerWidth <= 767) {
+        if (profilePhoto && profileText && profilePhoto.nextElementSibling !== profileText) {
+          heroWrapper.insertBefore(profilePhoto, profileText);
+        }
+      } else {
+        if (profilePhoto && profileText && profilePhoto.nextElementSibling !== null) {
+          heroWrapper.appendChild(profilePhoto);
+        }
+      }
+    } catch (error) {
+      Utils.handleError("Error reordering hero section:", error);
+    }
+  },
+  
+
 
 };
 
@@ -83,6 +108,9 @@ const UI = {
       const debouncedRevealElements = Utils.debounce(Utils.revealElements, 100);
       window.addEventListener("scroll", debouncedRevealElements);
       window.addEventListener("load", Utils.revealElements);
+      Utils.reorderHeroForMobile();
+window.addEventListener('resize', Utils.debounce(Utils.reorderHeroForMobile, 150));
+
     } catch (error) {
       Utils.handleError("Error initializing UI:", error);
     }

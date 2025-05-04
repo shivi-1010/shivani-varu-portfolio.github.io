@@ -563,8 +563,14 @@ a {
 .about-content {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 30px; /* increase inner spacing */
   text-align: left;
+  
+  border: 2px solid var(--smitten); /* vibrant pink border for contrast */
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05); /* light overlay for contrast on dark */
+  box-shadow: 0 4px 12px rgba(231, 0, 125, 0.3); /* soft pink glow */
+  transition: all 0.3s ease;
 }
 
 .about-content h4 {
