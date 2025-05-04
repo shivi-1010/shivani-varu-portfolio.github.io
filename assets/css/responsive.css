@@ -7,9 +7,11 @@
     padding: 0 10px;
     box-sizing: border-box;
   }
+
   .desktop-logo {
     display: none !important;
   }
+
   .profile-text h1 {
     font-size: 2.2rem;
     margin-top: 0;
@@ -83,53 +85,141 @@
     font-size: 1.8rem;
   }
 
+  .skills-area {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  .section-title.center h4 {
+    font-size: 1.8rem;
+    padding-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .section-title.center p {
+    font-size: 0.95rem;
+    padding-top: 10px;
+    max-width: 90%;
+  }
+
+  .skills-three-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
   .skills-column,
-  .skills-card,
-  .experience-card,
-  .cert-card,
-  .education-entry .card,
-  .career-card-modern {
+  .skills-card {
+    width: 100%;
     padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: none;
+    backdrop-filter: none;
+    background-color: rgba(40, 40, 40, 0.95);
+  }
+
+  .skills-card h4,
+  .skills-column h4 {
+    font-size: 1.2rem;
+    margin: 0 0 15px;
+  }
+
+  .skills-column h4::after,
+  .skills-card h4::after {
+    width: 60%;
+    margin: 10px auto;
+  }
+
+  .skill-bar span {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  .skill-bar .bar {
+    height: 8px;
+  }
+
+  .skills-column ul li,
+  .skills-card ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+  }
+
+  .skills-subheading {
+    font-size: 1.4rem;
+    margin: 20px 0 15px;
+    text-align: center;
+  }
+
+  .contact-content {
+    padding: 60px 15px;
   }
 
   .contact-flex {
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-info h5 {
+    font-size: 20px;
+  }
+
+  .contact-info a {
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .contact-info i {
+    font-size: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .form-consent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .form-consent label {
+    justify-content: center;
+  }
+
+  .contact-form .submit {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  .toast {
+    max-width: 90%;
+    font-size: 14px;
+    padding: 10px 18px;
   }
 
   .footer {
     padding: 30px 15px;
   }
-  body.light-mode .experience-grid {
-    display: flex;               /* stack vertically on mobile */
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  body.light-mode .experience-card {
-    width: 100%;
-    padding: 20px 15px;
-    box-sizing: border-box;
-  }
-
-  body.light-mode .experience .heading {
-    font-size: 2rem;             /* reduce heading size for mobile */
-    margin-bottom: 40px;
-  }
-
-  body.light-mode .experience-card h3,
-  body.light-mode .experience-card h4 {
-    font-size: 1rem;             /* slightly smaller text */
-    text-align: center;
-  }
-
-  body.light-mode .experience-card ul li {
-    font-size: 0.95rem;          /* slightly smaller list text */
-  }
-
-
 }
 
 /* Medium phones (481px - 767px) */
@@ -607,16 +697,18 @@
 /* ========== RESPONSIVE DESIGN (Light Mode) ========== */
 
 /* Small phones (320px - 480px) */
+/* Small phones (320px - 480px) */
 @media screen and (max-width: 480px) {
-  body.light-mode .desktop-logo {
-    display: none !important;
-  }
-
-.container {
+  body.light-mode .container {
     max-width: 100%;
     padding: 0 10px;
     box-sizing: border-box;
   }
+
+  body.light-mode .desktop-logo {
+    display: none !important;
+  }
+
   /* Hero section layout */
   body.light-mode .FirstElement {
     padding: 40px 15px !important;
@@ -632,12 +724,10 @@
 
   body.light-mode .hero-wrapper .profile-photo {
     order: -1 !important;
-    /* Move photo to top */
     margin-bottom: 20px !important;
     width: 180px !important;
     height: 180px !important;
     position: static !important;
-    /* Remove absolute positioning */
     transform: none !important;
   }
 
@@ -704,8 +794,108 @@
     padding: 20px 15px;
   }
 
+  body.light-mode .skills-three-columns {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  body.light-mode .skills-card h4,
+  body.light-mode .skills-column h4 {
+    font-size: 1.2rem;
+    margin: 0 0 15px;
+  }
+
+  body.light-mode .skills-column h4::after,
+  body.light-mode .skills-card h4::after {
+    width: 60%;
+    margin: 10px auto;
+  }
+
+  body.light-mode .skill-bar span {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+
+  body.light-mode .skill-bar .bar {
+    height: 8px;
+  }
+
+  body.light-mode .skills-column ul li,
+  body.light-mode .skills-card ul li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+  }
+
+  body.light-mode .skills-subheading {
+    font-size: 1.4rem;
+    margin: 20px 0 15px;
+    text-align: center;
+  }
+
+  body.light-mode .contact-content {
+    padding: 60px 15px;
+  }
+
   body.light-mode .contact-flex {
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  body.light-mode .contact-info,
+  body.light-mode .contact-form {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  body.light-mode .contact-info h5 {
+    font-size: 20px;
+  }
+
+  body.light-mode .contact-info a {
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  body.light-mode .contact-info i {
+    font-size: 20px;
+  }
+
+  body.light-mode .contact-form input,
+  body.light-mode .contact-form textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  body.light-mode .form-consent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  body.light-mode .form-consent label {
+    justify-content: center;
+  }
+
+  body.light-mode .contact-form .submit {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  body.light-mode .toast {
+    max-width: 90%;
+    font-size: 14px;
+    padding: 10px 18px;
   }
 
   body.light-mode .footer {
@@ -728,8 +918,129 @@
     margin-left: auto;
   }
 
+  body.light-mode .experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.light-mode .experience-card {
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  body.light-mode .experience .heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  body.light-mode .experience-card h3,
+  body.light-mode .experience-card h4 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  body.light-mode .experience-card ul li {
+    font-size: 0.95rem;
+  }
+
+  .footer {
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    padding: 0 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-socials {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-socials a {
+    font-size: 22px;
+    margin: 0 8px;
+  }
+
+  .footer-text p {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  .footer-text p:last-child {
+    font-size: 13px;
+    margin-top: 4px;
+  }
+
+  .footer-text strong {
+    font-size: 15px;
+  }
+
+  body.light-mode .footer {
+    padding: 30px 15px;
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 -2px 20px rgba(231, 0, 125, 0.1);
+    text-align: center;
+  }
+
+  body.light-mode .footer-container {
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  body.light-mode .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  body.light-mode .footer-socials a {
+    font-size: 22px;
+    margin: 0 8px;
+    color: #C73987;
+  }
+
+  body.light-mode .footer-socials a:hover {
+    color: #E7007D;
+    transform: scale(1.2);
+  }
+
+  body.light-mode .footer-text p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #555555;
+  }
+
+  body.light-mode .footer-text strong {
+    font-size: 15px;
+    color: #C73987;
+  }
+
+  body.light-mode .footer-text p:last-child {
+    font-size: 13px;
+    margin-top: 4px;
+    color: #777777;
+  }
+
 
 }
+
 
 
 /* Medium phones (481px - 767px) */
