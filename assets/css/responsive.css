@@ -6,73 +6,70 @@
   .desktop-logo {
     display: none !important;
   }
-
-
-  /* Typography scaling */
   .profile-text h1 {
     font-size: 2.2rem;
+    margin-top: 0;
   }
-  
+
   .profile-text h3 {
     font-size: 1.1rem;
   }
-  
+
   #typed-role {
     font-size: 1rem;
   }
-  
-  /* Hero section adjustments */
+
   .FirstElement {
     padding: 40px 15px;
     margin-top: 60px;
   }
-  
-  /* This is the key part - rearranging the hero wrapper */
+
   .hero-wrapper {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 30px;
   }
-  
+
   .hero-wrapper .profile-photo {
-    order: -1; /* Force photo to top */
+    order: -1;
     margin-bottom: 20px;
     width: 180px;
     height: 180px;
+    position: static;
+    transform: none;
   }
-  
+
   .profile-text {
-    align-items: center; /* Center text content */
+    align-items: center;
     text-align: center;
     max-width: 100%;
+    width: 100%;
   }
-  
-  /* Button adjustments */
+
   .btn-group {
     justify-content: center;
+    margin-top: 20px;
   }
-  
+
   .btn {
     min-width: 140px;
     padding: 10px 20px;
     font-size: 0.9rem;
   }
-  
-  /* Header & Navigation */
+
   .header .navbar {
     display: none;
   }
-  
+
   .header .menu_icon {
     display: flex;
   }
-  
+
   .logo img {
     max-width: 100px;
   }
-  
-  /* Section spacing */
+
   .section-title.center h4,
   .about-content h4,
   .project-title h4,
@@ -81,9 +78,8 @@
   .contact-title h4 {
     font-size: 1.8rem;
   }
-  
-  /* Cards & containers */
-  .skills-column, 
+
+  .skills-column,
   .skills-card,
   .experience-card,
   .cert-card,
@@ -91,13 +87,11 @@
   .career-card-modern {
     padding: 20px 15px;
   }
-  
-  /* Contact form */
+
   .contact-flex {
     gap: 40px;
   }
-  
-  /* Footer */
+
   .footer {
     padding: 30px 15px;
   }
@@ -109,46 +103,43 @@
   .desktop-logo {
     display: none !important;
   }
-  
-  /* Typography scaling */
+
   .profile-text h1 {
     font-size: 2.5rem;
   }
-  
+
   .profile-text h3 {
     font-size: 1.2rem;
   }
-  
+
   #typed-role {
     font-size: 1.1rem;
   }
-  
-  /* Hero section adjustments */
+
   .FirstElement {
     padding: 50px 20px;
     margin-top: 60px;
     gap: 30px;
   }
-  
+
   .hero-wrapper .profile-photo {
     width: 220px;
     height: 220px;
     margin-bottom: 20px;
   }
-  
-  /* Button adjustments */
+
   .btn-group {
     justify-content: center;
   }
-  
+
   .btn {
     min-width: 160px;
     padding: 10px 20px;
     font-size: 0.9rem;
   }
-  
+
 }
-    
+
 
 /* Tablets and small laptops (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -156,43 +147,41 @@
   .desktop-logo {
     display: none !important;
   }
-  /* Hero section adjustments */
+
   .FirstElement {
     padding: 60px 30px;
   }
-  
+
   .hero-wrapper {
     gap: 30px;
   }
-  
+
   .hero-wrapper .profile-photo {
     width: 260px;
     height: 260px;
   }
-  
-  /* Header & Navigation */
+
   .header .navbar {
     display: none;
   }
-  
+
   .header .menu_icon {
     display: flex;
   }
-  
-  /* Cards & containers */
+
   .skills-three-columns {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  
+
   .experience-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
-  
+
   /* Contact section */
   .contact-flex {
     gap: 40px;
   }
-  
+
   /* Career goals section */
   .career-card-modern {
     padding: 40px 30px;
@@ -201,40 +190,41 @@
 
 /* Tablets and small laptops (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   /* Hero section adjustments */
   .FirstElement {
     gap: 30px;
     padding: 60px 30px;
   }
-  
+
   .FirstElement .profile-photo {
     width: 260px;
     height: 260px;
   }
-  
+
   /* Header & Navigation */
   .header .navbar {
     display: none;
   }
-  
+
   .header .menu_icon {
     display: flex;
   }
-  
+
   /* Cards & containers */
   .skills-three-columns {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  
+
   .experience-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
-  
+
   /* Contact section */
   .contact-flex {
     gap: 40px;
   }
-  
+
   /* Career goals section */
   .career-card-modern {
     padding: 40px 30px;
@@ -243,29 +233,30 @@
 
 /* Laptops and small desktops (1024px - 1279px) */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+
   /* Header & Navigation */
   .header .navbar {
     display: flex;
   }
-  
+
   .header .menu_icon {
     display: none;
   }
-  
+
   /* Hero section adjustments */
   .FirstElement {
     gap: 50px;
   }
-  
+
   /* Cards & containers */
   .skills-three-columns {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .experience-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
-  
+
   /* Contact section */
   .contact-flex {
     gap: 50px;
@@ -274,35 +265,36 @@
 
 /* Large desktops and high-resolution displays (1280px and above) */
 @media screen and (min-width: 1280px) {
+
   /* Container max-width */
   .container {
     max-width: 1280px;
   }
-  
+
   /* Header & Navigation */
   .header .navbar {
     display: flex;
   }
-  
+
   .header .menu_icon {
     display: none;
   }
-  
+
   /* Hero section adjustments */
   .FirstElement {
     gap: 60px;
     padding: 60px 20px;
   }
-  
+
   /* Cards & containers */
   .skills-three-columns {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .experience-grid {
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   }
-  
+
   /* Contact section */
   .contact-flex {
     gap: 60px;
@@ -340,13 +332,13 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   .animated-icon,
   .FirstElement .profile-photo,
   .education-entry::before {
     animation: none !important;
   }
-  
+
   .reveal-fade,
   .reveal-left,
   .reveal-right,
@@ -370,7 +362,7 @@
     --bg-secondary: #0a0a0a;
     --bg-card: #121212;
   }
-  
+
   .btn,
   .tab-btn,
   .cert-card,
@@ -379,7 +371,7 @@
   .skills-card {
     border-width: 2px;
   }
-  
+
   .header ul li a::after {
     height: 3px;
   }
@@ -392,7 +384,7 @@
     color: black !important;
     font-size: 12pt;
   }
-  
+
   .header-area,
   .footer,
   .btn-group,
@@ -401,7 +393,7 @@
   .contact-content {
     display: none !important;
   }
-  
+
   .FirstElement,
   .about-area,
   .skills-area,
@@ -411,33 +403,39 @@
     margin: 0 !important;
     min-height: auto !important;
   }
-  
+
   .FirstElement {
     flex-direction: row;
     gap: 30pt;
   }
-  
+
   .FirstElement .profile-photo {
     width: 150pt;
     height: 150pt;
     border: 2pt solid #000;
     box-shadow: none !important;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: black !important;
     page-break-after: avoid;
   }
-  
-  p, li {
+
+  p,
+  li {
     color: black !important;
   }
-  
+
   a {
     color: black !important;
     text-decoration: underline;
   }
-  
+
   .skills-column,
   .skills-card,
   .experience-card,
@@ -455,11 +453,11 @@
     width: 150px;
     height: 150px;
   }
-  
+
   .profile-text h1 {
     font-size: 1.8rem;
   }
-  
+
   .btn {
     min-width: 120px;
     padding: 8px 16px;
@@ -471,28 +469,28 @@
   .container {
     max-width: 1600px;
   }
-  
+
   .FirstElement {
     gap: 80px;
   }
-  
+
   .FirstElement .profile-photo {
     width: 350px;
     height: 350px;
   }
-  
+
   .profile-text h1 {
     font-size: 4rem;
   }
-  
+
   .profile-text h3 {
     font-size: 1.8rem;
   }
-  
+
   .profile-text p {
     font-size: 1.2rem;
   }
-  
+
   .btn {
     font-size: 1.1rem;
     padding: 14px 32px;
@@ -505,25 +503,26 @@
     padding: 30px 20px;
     min-height: auto;
   }
-  
+
   .hero-wrapper {
     flex-direction: row;
     align-items: center;
     gap: 30px;
   }
-  
+
   .hero-wrapper .profile-photo {
-    order: 0; /* Reset order for landscape */
+    order: 0;
+    /* Reset order for landscape */
     width: 160px;
     height: 160px;
     margin-bottom: 0;
   }
-  
+
   .profile-text {
     align-items: flex-start;
     text-align: left;
   }
-  
+
   .header-area.sticky {
     padding: 5px 0;
   }
@@ -531,6 +530,7 @@
 
 /* Touch-enabled devices - larger touch targets */
 @media (hover: none) and (pointer: coarse) {
+
   .btn,
   .tab-btn,
   .header ul li a,
@@ -540,12 +540,12 @@
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  
+
   input[type="checkbox"] {
     width: 22px;
     height: 22px;
   }
-  
+
   .form-consent label {
     gap: 12px;
   }
@@ -553,12 +553,382 @@
 
 /* Hover-capable devices - enhanced hover effects */
 @media (hover: hover) {
+
   .btn:hover,
   .cert-card:hover,
   .experience-card:hover,
   .education-entry .card:hover,
   .skills-column:hover,
   .skills-card:hover {
+    transform: translateY(-8px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+
+
+/* Light Mode Responsive Styles */
+
+/* ========== RESPONSIVE DESIGN (Light Mode) ========== */
+
+/* Small phones (320px - 480px) */
+@media screen and (max-width: 480px) {
+  body.light-mode .desktop-logo {
+    display: none !important;
+  }
+
+  /* Hero section layout */
+  body.light-mode .FirstElement {
+    padding: 40px 15px !important;
+    margin-top: 60px !important;
+  }
+
+  body.light-mode .hero-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 30px !important;
+  }
+
+  body.light-mode .hero-wrapper .profile-photo {
+    order: -1 !important;
+    /* Move photo to top */
+    margin-bottom: 20px !important;
+    width: 180px !important;
+    height: 180px !important;
+    position: static !important;
+    /* Remove absolute positioning */
+    transform: none !important;
+  }
+
+  body.light-mode .hero-wrapper .profile-text {
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  body.light-mode .btn-group {
+    justify-content: center !important;
+    margin-top: 20px !important;
+  }
+
+  /* Typography adjustments */
+  body.light-mode .profile-text h1 {
+    font-size: 2.2rem !important;
+    margin-top: 0 !important;
+  }
+
+  body.light-mode .profile-text h3 {
+    font-size: 1.1rem !important;
+  }
+
+  body.light-mode #typed-role {
+    font-size: 1rem !important;
+  }
+
+  /* Button styling */
+  body.light-mode .btn {
+    min-width: 140px !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+
+  body.light-mode .header .navbar {
+    display: none;
+  }
+
+  body.light-mode .header .menu_icon {
+    display: flex;
+  }
+
+  body.light-mode .logo img {
+    max-width: 100px;
+  }
+
+  body.light-mode .section-title.center h4,
+  body.light-mode .about-content h4,
+  body.light-mode .project-title h4,
+  body.light-mode .education .heading,
+  body.light-mode .experience .heading,
+  body.light-mode .contact-title h4 {
+    font-size: 1.8rem;
+  }
+
+  body.light-mode .skills-column,
+  body.light-mode .skills-card,
+  body.light-mode .experience-card,
+  body.light-mode .cert-card,
+  body.light-mode .education-entry .card,
+  body.light-mode .career-card-modern {
+    padding: 20px 15px;
+  }
+
+  body.light-mode .contact-flex {
+    gap: 40px;
+  }
+
+  body.light-mode .footer {
+    padding: 30px 15px;
+  }
+}
+
+
+/* Medium phones (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  body.light-mode .desktop-logo {
+    display: none !important;
+  }
+
+  body.light-mode .profile-text h1 {
+    font-size: 2.5rem;
+  }
+
+  body.light-mode .profile-text h3 {
+    font-size: 1.2rem;
+  }
+
+  body.light-mode #typed-role {
+    font-size: 1.1rem;
+  }
+
+  body.light-mode .FirstElement {
+    padding: 50px 20px;
+    margin-top: 60px;
+    gap: 30px;
+  }
+
+  body.light-mode .hero-wrapper .profile-photo {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  body.light-mode .btn-group {
+    justify-content: center;
+  }
+
+  body.light-mode .btn {
+    min-width: 160px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets and small laptops (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  body.light-mode .desktop-logo {
+    display: none !important;
+  }
+
+  body.light-mode .FirstElement {
+    padding: 60px 30px;
+    gap: 30px;
+  }
+
+  body.light-mode .hero-wrapper .profile-photo {
+    width: 260px;
+    height: 260px;
+  }
+
+  body.light-mode .header .navbar {
+    display: none;
+  }
+
+  body.light-mode .header .menu_icon {
+    display: flex;
+  }
+
+  body.light-mode .skills-three-columns {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  body.light-mode .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  body.light-mode .contact-flex {
+    gap: 40px;
+  }
+
+  body.light-mode .career-card-modern {
+    padding: 40px 30px;
+  }
+}
+
+/* Laptops and small desktops (1024px - 1279px) */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  body.light-mode .header .navbar {
+    display: flex;
+  }
+
+  body.light-mode .header .menu_icon {
+    display: none;
+  }
+
+  body.light-mode .FirstElement {
+    gap: 50px;
+  }
+
+  body.light-mode .skills-three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  body.light-mode .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  body.light-mode .contact-flex {
+    gap: 50px;
+  }
+}
+
+/* Large desktops and high-resolution displays (1280px and above) */
+@media screen and (min-width: 1280px) {
+  body.light-mode .container {
+    max-width: 1280px;
+  }
+
+  body.light-mode .header .navbar {
+    display: flex;
+  }
+
+  body.light-mode .header .menu_icon {
+    display: none;
+  }
+
+  body.light-mode .FirstElement {
+    gap: 60px;
+    padding: 60px 20px;
+  }
+
+  body.light-mode .skills-three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  body.light-mode .experience-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+
+  body.light-mode .contact-flex {
+    gap: 60px;
+  }
+}
+
+/* Foldable devices (max-width: 320px) */
+@media screen and (max-width: 320px) {
+  body.light-mode .hero-wrapper .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  body.light-mode .profile-text h1 {
+    font-size: 1.8rem;
+  }
+
+  body.light-mode .btn {
+    min-width: 120px;
+    padding: 8px 16px;
+  }
+}
+
+/* Ultra-wide screens */
+@media screen and (min-width: 1920px) {
+  body.light-mode .container {
+    max-width: 1600px;
+  }
+
+  body.light-mode .FirstElement {
+    gap: 80px;
+  }
+
+  body.light-mode .FirstElement .profile-photo {
+    width: 350px;
+    height: 350px;
+  }
+
+  body.light-mode .profile-text h1 {
+    font-size: 4rem;
+  }
+
+  body.light-mode .profile-text h3 {
+    font-size: 1.8rem;
+  }
+
+  body.light-mode .profile-text p {
+    font-size: 1.2rem;
+  }
+
+  body.light-mode .btn {
+    font-size: 1.1rem;
+    padding: 14px 32px;
+  }
+}
+
+/* Landscape orientation for mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  body.light-mode .FirstElement {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  body.light-mode .hero-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  body.light-mode .hero-wrapper .profile-photo {
+    order: 0;
+    /* Reset order for landscape */
+    width: 160px;
+    height: 160px;
+    margin-bottom: 0;
+  }
+
+  body.light-mode .profile-text {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  body.light-mode .header-area.sticky {
+    padding: 5px 0;
+  }
+}
+
+
+/* Touch-enabled devices - larger touch targets */
+@media (hover: none) and (pointer: coarse) {
+
+  body.light-mode .btn,
+  body.light-mode .tab-btn,
+  body.light-mode .header ul li a,
+  body.light-mode .mobile-sidebar ul li a,
+  body.light-mode .contact-form .submit,
+  body.light-mode .cert-buttons .btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  body.light-mode input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  body.light-mode .form-consent label {
+    gap: 12px;
+  }
+}
+
+/* Hover-capable devices - enhanced hover effects */
+@media (hover: hover) {
+
+  body.light-mode .btn:hover,
+  body.light-mode .cert-card:hover,
+  body.light-mode .experience-card:hover,
+  body.light-mode .education-entry .card:hover,
+  body.light-mode .skills-column:hover,
+  body.light-mode .skills-card:hover {
     transform: translateY(-8px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
