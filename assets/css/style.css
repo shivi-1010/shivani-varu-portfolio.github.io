@@ -1411,7 +1411,16 @@ padding-bottom: 45px;
   color: var(--carnation-pink);
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
 
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /* === Volunteering Section === */
@@ -2060,17 +2069,6 @@ html, body {
 
 
 /* === Scroll Animations === */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .reveal-fade {
   opacity: 0;
   transform: translateY(50px);
