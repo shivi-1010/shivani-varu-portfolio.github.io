@@ -789,6 +789,7 @@ padding-bottom: 45px;
   text-align: center;
   font-size: 36px;
   font-weight: 700;
+  font-weight: 700;
   margin-bottom: 60px;
   color: var(--smitten);
 }
@@ -1849,6 +1850,8 @@ input[type="checkbox"]:checked::after {
 
 html, body {
   height: 100%;
+  /* overflow-x: hidden; */
+
 }
 
 /* Sidebar active state */

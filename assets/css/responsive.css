@@ -2,7 +2,11 @@
 
 /* Small phones (320px - 480px) */
 @media screen and (max-width: 480px) {
-
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
   .desktop-logo {
     display: none !important;
   }
@@ -95,6 +99,37 @@
   .footer {
     padding: 30px 15px;
   }
+  body.light-mode .experience-grid {
+    display: flex;               /* stack vertically on mobile */
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.light-mode .experience-card {
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  body.light-mode .experience .heading {
+    font-size: 2rem;             /* reduce heading size for mobile */
+    margin-bottom: 40px;
+  }
+
+  body.light-mode .experience-card h3,
+  body.light-mode .experience-card h4 {
+    font-size: 1rem;             /* slightly smaller text */
+    text-align: center;
+  }
+
+  body.light-mode .experience-card ul li {
+    font-size: 0.95rem;          /* slightly smaller list text */
+  }
+
+
 }
 
 /* Medium phones (481px - 767px) */
@@ -577,6 +612,11 @@
     display: none !important;
   }
 
+.container {
+    max-width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
   /* Hero section layout */
   body.light-mode .FirstElement {
     padding: 40px 15px !important;
