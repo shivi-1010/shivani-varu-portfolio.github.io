@@ -159,7 +159,6 @@ body {
 
 }
 
-@media screen and (max-width: 480px) {
 
   .section-title.center h4 {
     font-size: 1.6rem;
@@ -207,35 +206,450 @@ body {
     padding-bottom: 4px;
   }
 
+  .education {
+    padding: 60px 10px; /* reduce vertical padding */
+  }
+
+  .education .heading {
+    font-size: 1.7rem; /* scale down heading */
+    margin-bottom: 30px;
+  }
+
+  .education-timeline {
+    padding-left: 0;
+    border-left: 2px solid #FDA5C8;
+    max-width: 100%;
+  }
+
+  .education-entry {
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+
+  .education-entry::before {
+    left: -8px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .education-entry .card {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .education-entry .date {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    gap: 6px;
+  }
+
+  .education-entry h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .education-entry p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .education-entry h5 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .education-entry ul {
+    margin-left: 18px;
+  }
+
+  .education-entry ul li {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  
+  .experience {
+    padding: 50px 10px;
+    text-align: center;
+  }
+
+  .experience .heading {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr; /* stack cards on mobile */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .experience-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .experience-card img.logo {
+    max-width: 60px;
+    margin-bottom: 12px;
+  }
+
+  .experience-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .experience-card h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .experience-card ul li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .experience-card .tools {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .experience-card .tools span {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  .card-footer {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  .experience-card .date-location {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  .project-content {
+    padding: 50px 10px;
+  }
+
+  .project-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+  }
+
+  .project-title p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .project-tabs {
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .projects {
+    grid-template-columns: 1fr; /* stack projects vertically */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .project {
+    padding: 20px 16px;
+    min-height: auto;
+    max-width: 100%;
+  }
+
+  .project i {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    margin-bottom: 16px;
+  }
+
+  .project h4 {
+    font-size: 1.2rem;
+    margin: 12px 0 8px;
+  }
+
+  .project p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .project-buttons {
+    margin-top: 12px;
+  }
+
+  .project-buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .certificates-content {
+    padding: 60px 10px;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+
+  .section-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+  }
+
+  .section-title p {
+    font-size: 0.95rem;
+    padding-top: 12px;
+  }
+
+  .cert-grid {
+    gap: 20px;
+    flex-direction: column; /* stack cards vertically */
+    align-items: center;
+  }
+
+  .cert-card {
+    width: 90%; /* adjust width for mobile */
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .cert-card img {
+    width: 80px;
+    margin-bottom: 12px;
+  }
+
+  .cert-card h5 {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+
+  .cert-card p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .cert-buttons {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .cert-card .btn {
+    padding: 8px 16px;
+    min-width: auto;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  #career-goals {
+    padding: 60px 10px;
+    text-align: center;
+  }
+
+  .career-heading {
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  .career-heading i {
+    font-size: 1.6rem;
+    top: 1px;
+  }
+
+  .career-heading h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .career-subtitle {
+    font-size: 0.95rem;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .career-card-modern {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .goal-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  .callout-box-modern {
+    padding: 16px;
+    font-size: 0.95rem;
+    gap: 10px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  .callout-box-modern i {
+    font-size: 1.3rem;
+  }
+
+  .animated-icon {
+    font-size: 1.4rem;
+  }
+
+  #volunteering {
+    padding: 50px 10px;
+    text-align: center;
+  }
+
+  #volunteering h4 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  #volunteering .volunteer-card {
+    padding: 20px 16px;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  #volunteering .volunteer-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  #volunteering .volunteer-icon i {
+    font-size: 24px;
+  }
+
+  #volunteering p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 8px;
+  }
+
+  .contact-content {
+    padding: 60px 10px;
+    text-align: center;
+  }
+
+  .contact-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-title p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    padding: 0 8px;
+  }
+
+  .contact-flex {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    gap: 10px;
+    flex: 1 1 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .contact-info a {
+    justify-content: center;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .form-consent {
+    font-size: 0.85rem;
+    gap: 6px;
+    margin: 10px 0 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .contact-form .submit {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    max-width: 220px;
+  }
+
+  #msg,
+  .contact-form .error {
+    font-size: 0.85rem;
+  }
+
+  .toast {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    max-width: 280px;
+  }
+
+  .footer {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .footer-container {
+    padding: 0 10px;
+  }
+
+  .footer-socials {
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .footer-socials a {
+    font-size: 22px;
+    margin: 0 8px;
+  }
+
+  .footer-text p {
+    font-size: 0.85rem;
+    margin: 6px 0 4px 0;
+  }
+
+  .footer-text p:last-child {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  .neon-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
 }
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Tablets and small laptops (768px - 1023px) */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -526,20 +940,451 @@ body {
     padding-bottom: 4px;
   }
 
+    body.light-mode .education {
+      padding: 60px 10px; 
+    }
+  
+    body.light-mode .education .heading {
+      font-size: 1.7rem;
+      margin-bottom: 30px;
+    }
+  
+    body.light-mode .education-timeline {
+      padding-left: 0;
+      border-left: 2px solid #FDA5C8;
+      max-width: 100%;
+    }
+  
+    body.light-mode .education-entry {
+      margin-bottom: 30px;
+      padding-left: 20px;
+    }
+  
+    body.light-mode .education-entry::before {
+      left: -8px;
+      width: 12px;
+      height: 12px;
+    }
+  
+    body.light-mode .education-entry .card {
+      padding: 20px 16px;
+      border-radius: 10px;
+    }
+  
+    body.light-mode .education-entry .date {
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      gap: 6px;
+    }
+  
+    body.light-mode .education-entry h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+  
+    body.light-mode .education-entry p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+  
+    body.light-mode .education-entry h5 {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+  
+    body.light-mode .education-entry ul {
+      margin-left: 18px;
+    }
+  
+    body.light-mode .education-entry ul li {
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+      line-height: 1.5;
+    }
+  
+  
+  body.light-mode .experience {
+    padding: 50px 10px;
+    text-align: center;
+  }
 
+  body.light-mode .experience .heading {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  body.light-mode .experience-grid {
+    grid-template-columns: 1fr; /* stack cards on mobile */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  body.light-mode .experience-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  body.light-mode .experience-card img.logo {
+    max-width: 60px;
+    margin-bottom: 12px;
+  }
+
+  body.light-mode .experience-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  body.light-mode .experience-card h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  body.light-mode .experience-card ul li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  body.light-mode .experience-card .tools {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  body.light-mode .experience-card .tools span {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  body.light-mode .card-footer {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  body.light-mode .experience-card .date-location {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  body.light-mode .project-content {
+    padding: 50px 10px;
+  }
+
+  body.light-mode .project-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+  }
+
+  body.light-mode .project-title p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  body.light-mode .project-tabs {
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  body.light-mode .tab-btn {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  body.light-mode .projects {
+    grid-template-columns: 1fr; /* stack projects vertically */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  body.light-mode .project {
+    padding: 20px 16px;
+    min-height: auto;
+    max-width: 100%;
+  }
+
+  body.light-mode .project i {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    line-height: 50px;
+    margin-bottom: 16px;
+  }
+
+  body.light-mode .project h4 {
+    font-size: 1.2rem;
+    margin: 12px 0 8px;
+  }
+
+  body.light-mode .project p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  body.light-mode .project-buttons {
+    margin-top: 12px;
+  }
+
+  body.light-mode .project-buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  body.light-mode .certificates-content {
+    padding: 60px 10px;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+
+  body.light-mode .section-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+  }
+
+  body.light-mode .section-title p {
+    font-size: 0.95rem;
+    padding-top: 12px;
+  }
+
+  body.light-mode .cert-grid {
+    gap: 20px;
+    flex-direction: column; /* stack cards vertically */
+    align-items: center;
+  }
+
+  body.light-mode .cert-card {
+    width: 90%; /* adjust width for mobile */
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  body.light-mode .cert-card img {
+    width: 80px;
+    margin-bottom: 12px;
+  }
+
+  body.light-mode .cert-card h5 {
+    font-size: 1rem;
+    margin: 8px 0;
+  }
+
+  body.light-mode .cert-card p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  body.light-mode .cert-buttons {
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  body.light-mode .cert-card .btn {
+    padding: 8px 16px;
+    min-width: auto;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  body.light-mode #career-goals {
+    padding: 60px 10px;
+    text-align: center;
+  }
+
+  body.light-mode .career-heading {
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: column;
+  }
+
+  body.light-mode .career-heading i {
+    font-size: 1.6rem;
+    top: 1px;
+  }
+
+  body.light-mode .career-heading h2 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  body.light-mode .career-subtitle {
+    font-size: 0.95rem;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  body.light-mode .career-card-modern {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  body.light-mode .goal-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  body.light-mode .callout-box-modern {
+    padding: 16px;
+    font-size: 0.95rem;
+    gap: 10px;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+
+  body.light-mode .callout-box-modern i {
+    font-size: 1.3rem;
+  }
+
+  body.light-mode .animated-icon {
+    font-size: 1.4rem;
+  }
+
+  body.light-mode #volunteering {
+    padding: 50px 10px;
+    text-align: center;
+  }
+
+  body.light-mode #volunteering h4 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  body.light-mode #volunteering .volunteer-card {
+    padding: 20px 16px;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  body.light-mode #volunteering .volunteer-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 16px;
+  }
+
+  body.light-mode #volunteering .volunteer-icon i {
+    font-size: 24px;
+  }
+
+  body.light-mode #volunteering p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 8px;
+  }
+
+  body.light-mode .contact-content {
+    padding: 60px 10px;
+    text-align: center;
+  }
+
+  body.light-mode .contact-title h4 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  body.light-mode .contact-title p {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    padding: 0 8px;
+  }
+
+  body.light-mode .contact-flex {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  body.light-mode .contact-info {
+    font-size: 0.9rem;
+    gap: 10px;
+    flex: 1 1 auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  body.light-mode .contact-info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  body.light-mode .contact-info a {
+    justify-content: center;
+  }
+
+  body.light-mode .contact-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.light-mode .contact-form input,
+  body.light-mode .contact-form textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  body.light-mode .form-consent {
+    font-size: 0.85rem;
+    gap: 6px;
+    margin: 10px 0 16px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  body.light-mode .contact-form .submit {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    max-width: 220px;
+  }
+
+  body.light-mode #msg,
+  body.light-mode .contact-form .error {
+    font-size: 0.85rem;
+  }
+
+  body.light-mode .toast {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    max-width: 280px;
+  }
+
+  body.light-mode .footer {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  body.light-mode .footer-container {
+    padding: 0 10px;
+  }
+
+  body.light-mode .footer-socials {
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  body.light-mode .footer-socials a {
+    font-size: 22px;
+    margin: 0 8px;
+  }
+
+  body.light-mode .footer-text p {
+    font-size: 0.85rem;
+    margin: 6px 0 4px 0;
+  }
+
+  body.light-mode .footer-text p:last-child {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+
+  body.light-mode .neon-text {
+    font-size: 1rem;
+    text-align: center;
+  }
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Medium phones (481px - 767px) */
 @media screen and (min-width: 481px) and (max-width: 767px) {
