@@ -1272,28 +1272,31 @@ body.light-mode .project-buttons .btn:hover {
 
 
 
-/*--------------------------- Certificates Section (Light Mode) ---------------------------*/
+/*--------------------------- Certificates Section (Light Mode – Premium Refined) ---------------------------*/
 
 body.light-mode .certificates-content {
-  background: #ffffff;
-  padding: 90px 0;
+  background-color: var(--bg-light-primary);  padding: 90px 20px;
   padding-top: 124px;
-  padding-bottom: 224px;
+  padding-bottom: 180px;
   text-align: center;
 }
 
 body.light-mode .section-title h4 {
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 2rem;
   color: var(--smitten);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 
 body.light-mode .section-title p {
-  color: var(--current-text-primary);
-  margin-bottom: var(--spacing-lg);
-  font-size: 16px;
-  padding-top: 20px;
+  color: #555555; /* more readable dark grey */
+  margin-bottom: 40px;
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 body.light-mode .cert-grid {
@@ -1304,45 +1307,45 @@ body.light-mode .cert-grid {
 }
 
 body.light-mode .cert-card {
-  background-color: var(--light-bg-card);
+  background: linear-gradient(135deg, #fff6fa 0%, #fde4ee 100%);
   border-left: 4px solid var(--smitten);
-  border-radius: var(--radius-md);
-  padding: 25px;
+  border-radius: 16px;
+  padding: 25px 20px;
   width: 300px;
   text-align: center;
-  box-shadow: var(--light-shadow-soft);
-  transition: transform var(--transition-fast);
-  will-change: transform;
+  box-shadow: 0 8px 24px rgba(231, 0, 125, 0.08); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.light-mode .cert-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(231, 0, 125, 0.2); 
 }
 
 body.light-mode .cert-card img {
-  width: 100px;
+  width: 90px;
   height: auto;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  transition: transform var(--transition-fast);
+  margin: 0 auto 15px auto;
+  transition: transform 0.3s ease;
 }
 
 body.light-mode .cert-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 body.light-mode .cert-card h5 {
-  font-size: 18px;
-  color: var(--current-text-primary);
-  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333333;
+  margin: 10px 0 8px 0;
+  font-weight: 600;
 }
 
 body.light-mode .cert-card p {
-  color: var(--current-text-secondary);
-  font-size: 14px;
+  color: #777777;
+  font-size: 0.95rem;
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 body.light-mode .cert-buttons {
@@ -1354,38 +1357,38 @@ body.light-mode .cert-buttons {
 
 body.light-mode .cert-card .btn {
   background-color: var(--smitten);
-  color: white;
+  color: #ffffff;
   padding: 10px 20px;
   min-width: 120px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 30px;
   font-weight: 600;
-  transition: var(--transition-fast);
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
 }
 
 body.light-mode .cert-card .btn:hover {
   background-color: #ffffff;
   color: var(--smitten);
   border: 2px solid var(--smitten);
-  box-shadow: 0 4px 12px rgba(199, 57, 135, 0.25);
+  box-shadow: 0 6px 16px rgba(199, 57, 135, 0.25);
   transform: translateY(-2px);
 }
 
-
 body.light-mode .btn.disabled {
   pointer-events: none;
-  background-color: var(--china-pink);
-  color: #222;
+  background-color: #f2f2f2;
+  color: #aaa;
   opacity: 0.7;
+  border: 1px solid #ddd;
 }
 
 
 
-/*==================== Career Goals Section (Light Mode) ====================*/
 
 body.light-mode #career-goals {
-  background: linear-gradient(to bottom, #fff0f5 0%, #fde4ee 100%);
-  padding: 100px 20px;
+  background: linear-gradient(to bottom, #fff0f5 0%, #fde4ee 100%);  padding: 100px 20px;
   text-align: center;
 }
 
@@ -1424,10 +1427,8 @@ body.light-mode .career-heading h2 {
   padding: 0;
 }
 
-
-
 body.light-mode .career-subtitle {
-  color: #666666;
+  color: #444444; /* improved dark grey */
   font-size: 1rem;
   margin-top: 8px;
   margin-bottom: 20px;
@@ -1450,8 +1451,8 @@ body.light-mode .career-card-modern:hover {
 }
 
 body.light-mode .goal-text {
-  color: #040404;
-  font-size: 1.2rem;
+  color: #333333; /* strong readable grey */
+  font-size: 1.1rem;
   line-height: 1.8;
   text-align: justify;
   margin-bottom: 30px;
@@ -1463,10 +1464,10 @@ body.light-mode .highlight {
 }
 
 body.light-mode .callout-box-modern {
-  background-color: #fff0f6;
+  background-color: #fff6fa;
   border-left: 5px solid #FDA5C8;
   box-shadow: 0 4px 10px rgba(231, 0, 125, 0.08);
-  color: #222222;
+  color: #333333; /* dark text for better readability */
   margin-top: 30px;
   padding: 20px;
   border-radius: 8px;
@@ -1493,8 +1494,6 @@ body.light-mode .animated-icon:hover {
   color: var(--mexican-pink);
 }
 
-
-
 body.light-mode .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -1505,6 +1504,7 @@ body.light-mode .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 /* =================================Volunteering Section (Light Mode)================================= */
 body.light-mode #volunteering {
