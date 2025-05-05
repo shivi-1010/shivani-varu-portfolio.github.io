@@ -61,7 +61,6 @@
   --transition-fast: 0.3s ease;
   --transition-medium: 0.5s ease;
 
-
 }
 
 
@@ -70,9 +69,9 @@
 
 /* ========== RESET ========== */
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 *, *::before, *::after {
   margin: 0;
@@ -120,19 +119,16 @@ body, header, footer, section, div, p, h1, h2, h3, h4, h5, h6, a, button, input,
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* Profile glow */
 .FirstElement .profile-photo {
   animation: glowPulse 3s ease-in-out infinite;
   will-change: box-shadow;
 }
 
-/* Desktop logo */
 .desktop-logo {
   display: flex !important;
   align-items: center;
 }
 
-/* Button and Icon Styles */
 .theme-toggle button {
   background: none;
   border: none;
@@ -146,7 +142,6 @@ body, header, footer, section, div, p, h1, h2, h3, h4, h5, h6, a, button, input,
   transform: scale(1.1);
 }
 
-/* Soft Glow for Moon and Sun */
 .theme-toggle button.glow-moon i {
   color: #8ab4f8;
   text-shadow: 0 0 4px #8ab4f8;
@@ -180,7 +175,6 @@ body, header, footer, section, div, p, h1, h2, h3, h4, h5, h6, a, button, input,
 
 .logo img:hover {
   box-shadow: 0 0 5px var(--mexican-pink);
-  /* Fallback for better performance */
   filter: drop-shadow(0 0 5px var(--mexican-pink));
   cursor: pointer;
 }
